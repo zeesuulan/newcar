@@ -16,16 +16,8 @@
 
 	$VERSION = '1';
 
-	function setCSS($filename){
-		global $VERSION, $SERVER_ROOT;
-		return '<link rel="stylesheet" href="'.$SERVER_ROOT.'static/css/'.$filename.'?v='.$VERSION.'">';
-	}
 
-	function setJS($filename){
-		global $VERSION, $SERVER_ROOT;
-		return '<script src="'.$SERVER_ROOT.'static/js/'.$filename.'?v='.$VERSION.'"></script>';
-	}
-
+	require $APP_ROOT."lib/tools.php";
 	require $APP_ROOT."lib/medoo.php";
 
 	$D = new medoo([
