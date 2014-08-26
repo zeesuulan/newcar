@@ -11,6 +11,9 @@
 			case 'store':
 				delStore($ids);
 				break;
+			case 'employee':
+				delEmployee($ids);
+				break;
 			default:break;
 		}
 	}else{
@@ -33,5 +36,23 @@
 				returns("", 0);
 		}else{
 			returns("店不存在", -1);
+		}
+	}
+
+	function delEmployee($id){
+		global $D;
+		$dname = "car_employee";
+
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+			$last_user_id = $D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			]);
+				returns("", 0);
+		}else{
+			returns("员工不存在", -1);
 		}
 	}

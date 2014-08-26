@@ -56,11 +56,11 @@ $(function() {
 		return false
 	})
 
-	$(".s_del").click(function() {
+	$(".e_del").click(function() {
 		if (window.confirm(delConfirmStr)) {
 			$.post("../api/delete.php", {
-				type: "store",
-				id: $(this).attr("sid")
+				type: "employee",
+				id: $(this).attr("eid")
 			}, function(data) {
 				if (data.no == 0) {
 					window.location.reload()

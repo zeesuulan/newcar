@@ -22,6 +22,7 @@ var pageData = {
                 <th>联系方式</th>
                 <th>所在门店</th>
                 <th>加入时间</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,9 @@ var pageData = {
                 </td>
                 <td>
                     <?=$employee[ 'time']?>
+                </td>
+                <td>
+                    <a href="#" class="e_del btn btn-danger" eid="<?=$employee[ 'id']?>" >删除</a>
                 </td>
             </tr>
             <?php } ?>
