@@ -10,23 +10,21 @@
 <body>
     <div class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">JIATONG</a>
+            <a class="navbar-brand" href="index.php">JIATONG</a>
         </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <div class="navbar-collapse collapse navbar-responsive-collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li><a href="index.php">首页</a>
+                <li id="member"><a href="member.php">会员管理</a>
                 </li>
-                <li><a href="member.php">会员管理</a>
+                <li id="book"><a href="book.php">订单管理</a>
                 </li>
-                <li><a href="book.php">订单管理</a>
+                <li id="store"><a href="store.php">门店管理</a>
                 </li>
-                <li><a href="store.php">门店管理</a>
-                </li>
-                <li><a href="employee.php">员工管理</a>
+                <li id="employee"><a href="employee.php">员工管理</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" id="logout">退出</a>
+                <li><a href="#" id="logout">退出<span>(<?=$_SESSION['username']?>)</span></a>
                 </li>
             </ul>
         </div>

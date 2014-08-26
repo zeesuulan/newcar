@@ -7,4 +7,7 @@ $(function(){
 			}
 		}, "json")
 	})
+
+	//导航
+	$("#navbar").find("#" + pageData.name).addClass("active")
 })
