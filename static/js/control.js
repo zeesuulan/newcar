@@ -1,5 +1,8 @@
 $(function() {
 
+
+	var delConfirmStr = "确定要删除嘛？"
+
 	$("#logout").click(function() {
 		$.get("../api/sysLogout.php", function(data) {
 			if (data.no == 0) {
@@ -16,7 +19,7 @@ $(function() {
 		$.post("../api/add.php", $("#store_form").serialize(), function(data) {
 			if (data.no == 0) {
 				window.location.reload()
-			}else{
+			} else {
 				$("#errmsg").html(data.msg)
 			}
 		}, "json")
@@ -24,14 +27,16 @@ $(function() {
 	})
 
 	$(".s_del").click(function() {
-		$.post("../api/delete.php", {
-			type: "store",
-			id: $(this).attr("sid")
-		}, function(data) {
-			if (data.no == 0) {
-				window.location.reload()
-			}
-		}, "json")
+		if (window.confirm(delConfirmStr)) {
+			$.post("../api/delete.php", {
+				type: "store",
+				id: $(this).attr("sid")
+			}, function(data) {
+				if (data.no == 0) {
+					window.location.reload()
+				}
+			}, "json")
+		}
 		return false
 	})
 })
