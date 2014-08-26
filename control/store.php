@@ -9,7 +9,7 @@ var pageData = {
         <ul class="nav">
             <li><a href="store.php"><b class="glyphicon glyphicon-th-list"></b>门店列表</a>
             </li>
-            <li><a href="#overview-mobile"><b class="glyphicon glyphicon-plus"></b>新建门店</a>
+            <li><a href="#overview-mobile" data-toggle="modal" data-target="#storeModal"><b class="glyphicon glyphicon-plus"></b>新建门店</a>
             </li>
         </ul>
     </div>
@@ -40,5 +40,42 @@ var pageData = {
         </tbody>
     </table>
 </div>
+<div class="modal" id="storeModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">新建门店</h4>
+            </div>
+            <div class="modal-body">
+                <form id='store_form'>
+                    <input type="hidden" class="form-control" name="ftype" value="store">
+                    <div class="form-group">
+                        <label for="sname">门店名称</label>
+                        <input type="text" class="form-control" name="sname" placeholder="门店名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="saddress">门店地址</label>
+                        <input type="text" class="form-control" name="saddress" placeholder="门店名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">门店负责人</label>
+                        <select class="form-control" name="manager">
+                            <?php foreach($employee as $e) { ?>
+                            <option value="<?=$e['id']?>">
+                                <?=$e[ 'ename']?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="save_store">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
 <?php require "../public/control/footer.php"; ?>
-<?=setJS( "control.js").setJS( "control_index.js")?>
+<?=setJS( "control.js")?>
