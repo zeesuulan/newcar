@@ -16,6 +16,8 @@
             <ul class="nav navbar-nav">
                 <li id="member"><a href="member.php">会员管理</a>
                 </li>
+                <li id="service"><a href="service.php">服务管理</a>
+                </li>
                 <li id="book"><a href="book.php">订单管理</a>
                 </li>
                 <li id="store"><a href="store.php">门店管理</a>
