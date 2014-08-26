@@ -1,6 +1,6 @@
 <?php 
 
-	
+	session_start();
 	$APP_ROOT_PATH = '/newcar/';
 	$SERVER_PATH = $_SERVER['DOCUMENT_ROOT'];
 	$SERVER_NAME = "http://".$_SERVER['SERVER_NAME'];
@@ -26,5 +26,4 @@
 		'server' => $DATABASE_SERVER,
 		'username' => $DATABASE_USERNAME,
 		'password' => $DATABASE_PASSWORD
-	])
- ?>
+	]);

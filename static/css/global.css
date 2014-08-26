@@ -1,3 +1,15 @@
 label .glyphicon{
 	margin: 0 5px;
 }
+
+#wrap{
+	height:100%;
+	width:80%;
+	margin:0 auto;
+	border-left:1px solid #333;
+	border-right:1px solid #333;
+}
+
+#errmsg{
+	font-size: 12px;
+}

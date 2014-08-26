@@ -10,12 +10,12 @@
 		return '<script src="'.$SERVER_ROOT.'static/js/'.$filename.'?v='.$VERSION.'"></script>';
 	}
 
-	function returns($data, $no){
+	function returns($msg, $no){
 		$arr = array(
 			"no" => $no,
-			"data" => $data
+			"msg" => $msg
 		);
-		echo json_encode($arr);
+		print_r(json_encode($arr));
+		exit;
 	}
 
- ?>

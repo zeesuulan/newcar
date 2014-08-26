@@ -1,4 +1,4 @@
-<?php require "lib/config.php"; ?>
+<?php require "lib/config.php"; require "lib/index_jump.php"; ?>
 <!DOCTYPE html>
 <html lang="en" style="height:100%">
 
@@ -10,7 +10,7 @@
 </head>
 
 <body style="height:100%">
-    <div class="jumbotron" style="height:100%;width:80%;margin:0 auto;">
+    <div class="jumbotron" id="wrap">
         <h1 style="text-align:center">JIATONG</h1>
         <form class="form" style="width:30%;margin:50px auto" id="loginForm">
             <div class="form-group">
@@ -23,6 +23,7 @@
                     <span class="glyphicon glyphicon-th"></span>密码：</label>
                     <input type="password" class="form-control" id="login[]" name="password" placeholder="密码">
             </div>
+            <p id="errmsg" class="text-danger"></p>
             <div class="form-group">
                 <div class="">
                     <button type="submit" class="btn btn-primary">登录</button>
