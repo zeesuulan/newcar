@@ -13,3 +13,13 @@
 #errmsg{
 	font-size: 12px;
 }
+
+.cIndexNumber{
+	font-size: 4rem;
+	margin: 0 10px;
+	color: #f89406;
+}
+
+.panel-heading{
+	font-weight: bolder;
+}
