@@ -3,11 +3,14 @@
 	if(!isset($_SESSION['username'])){
 		exit;
 	}
-	
+
 	if(isset($_POST)) {
 		switch ($_POST['ftype']) {
 			case 'store':
 				addStore($_POST);
+				break;
+			case 'employee':
+				addEmployee($_POST);
 				break;
 			default:break;
 		}
@@ -31,5 +34,24 @@
 				returns("", 0);
 		}else{
 			returns("店名已存在", -1);
+		}
+	}
+
+	function addEmployee($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"phone" => $post['phone']
+			])){
+			$last_user_id = $D->insert($dname, [
+				"ename" => $post['ename'],
+				"phone" => $post['phone'],
+				"store_id" => $post['store_id'],
+				"time" => date("Y-m-d H:i:s")
+			]);
+				returns("", 0);
+		}else{
+			returns("员工已存在", -1);
 		}
 	}

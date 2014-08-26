@@ -5,3 +5,7 @@
 		],[
 			"car_employee.ename", "car_employee.phone",  "car_employee.time", "car_store.name"
 		]);
+
+	$store = $D->select("car_store", [
+			"name", "id" 
+		]);

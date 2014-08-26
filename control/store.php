@@ -9,7 +9,7 @@ var pageData = {
         <ul class="nav">
             <li><a href="store.php"><b class="glyphicon glyphicon-th-list"></b>门店列表</a>
             </li>
-            <li><a href="#overview-mobile" data-toggle="modal" data-target="#storeModal"><b class="glyphicon glyphicon-plus"></b>新建门店</a>
+            <li><a href="#" data-toggle="modal" data-target="#storeModal"><b class="glyphicon glyphicon-plus"></b>新建门店</a>
             </li>
         </ul>
     </div>
