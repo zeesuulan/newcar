@@ -26,9 +26,15 @@ var pageData = {
         <tbody>
             <?php foreach($list as $store) { ?>
             <tr>
-                <td><?=$store['name']?></td>
-                <td><?=$store['address']?></td>
-                <td><?=$store['ename']?></td>
+                <td>
+                    <?=$store[ 'name']?>
+                </td>
+                <td>
+                    <?=$store[ 'address']?>
+                </td>
+                <td>
+                    <?=$store[ 'ename']?>
+                </td>
             </tr>
             <?php } ?>
         </tbody>

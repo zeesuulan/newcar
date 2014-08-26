@@ -1,8 +1,8 @@
-<?php require "../lib/config.php";require "../lib/jump.php";require "../public/control/header.php"; ?>
+<?php require "../lib/config.php";require "../lib/jump.php";require "../public/control/header.php";require "../c/employee_c.php"; ?>
 <script>
-    var pageData = {
-        name: 'employee'
-    }
+var pageData = {
+    name: 'employee'
+}
 </script>
 <div class="col-md-2">
     <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
@@ -15,33 +15,34 @@
     </div>
 </div>
 <div class="col-md-10">
-<table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>员工姓名</th>
-      <th>联系方式</th>
-      <th>所在门店</th>
-      <th>加入时间</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-      </tbody>
-</table> 
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>员工姓名</th>
+                <th>联系方式</th>
+                <th>所在门店</th>
+                <th>加入时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($list as $employee) { ?>
+            <tr>
+                <td>
+                    <?=$employee[ 'ename']?>
+                </td>
+                <td>
+                    <?=$employee[ 'phone']?>
+                </td>
+                <td>
+                    <?=$employee[ 'name']?>
+                </td>
+                <td>
+                    <?=$employee[ 'time']?>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
 <?php require "../public/control/footer.php"; ?>
 <?=setJS( "control.js").setJS( "control_index.js")?>
