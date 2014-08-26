@@ -1,6 +1,9 @@
 <?php 
 	require '../lib/config.php';
-
+	if(!isset($_SESSION['username'])){
+		exit;
+	}
+	
 	if(isset($_POST)) {
 		switch ($_POST['ftype']) {
 			case 'store':

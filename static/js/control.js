@@ -12,10 +12,26 @@ $(function() {
 	$("#navbar").find("#" + pageData.name).addClass("active")
 
 	$("#save_store").click(function() {
+		$("#errmsg").html("")
 		$.post("../api/add.php", $("#store_form").serialize(), function(data) {
-			if(data.no == 0) {
+			if (data.no == 0) {
+				window.location.reload()
+			}else{
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	$(".s_del").click(function() {
+		$.post("../api/delete.php", {
+			type: "store",
+			id: $(this).attr("sid")
+		}, function(data) {
+			if (data.no == 0) {
 				window.location.reload()
 			}
 		}, "json")
+		return false
 	})
 })

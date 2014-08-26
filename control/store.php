@@ -21,6 +21,7 @@ var pageData = {
                 <th>门店名称</th>
                 <th>门店地址</th>
                 <th>门店负责人</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,9 @@ var pageData = {
                 </td>
                 <td>
                     <?=$store[ 'ename']?>
+                </td>
+                <td>
+                    <a href="#" class="s_del btn btn-danger" sid="<?=$store[ 'id']?>" >删除</a>
                 </td>
             </tr>
             <?php } ?>
@@ -71,6 +75,7 @@ var pageData = {
                 </form>
             </div>
             <div class="modal-footer">
+                <p id="errmsg" class="text-danger"></p>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-primary" id="save_store">保存</button>
             </div>
