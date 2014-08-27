@@ -17,6 +17,9 @@
 			case 'active':
 				delActive($ids);
 				break;
+			case 'notice':
+				delNotice($ids);
+				break;
 			default:break;
 		}
 	}else{
@@ -75,5 +78,23 @@
 				returns("", 0);
 		}else{
 			returns("活动不存在", -1);
+		}
+	}
+
+	function delNotice($id){
+		global $D;
+		$dname = "car_Notice";
+
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+			$last_user_id = $D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			]);
+				returns("", 0);
+		}else{
+			returns("公告不存在", -1);
 		}
 	}

@@ -9,7 +9,7 @@ var pageData = {
         <ul class="nav">
             <li><a href="active.php"><b class="glyphicon glyphicon-th-list"></b>活动列表</a>
             </li>
-            <li><a href="#" data-toggle="modal" data-target="#acitveModal"><b class="glyphicon glyphicon-plus"></b>添加活动</a>
+            <li><a href="#" data-toggle="modal" data-target="#activeModal"><b class="glyphicon glyphicon-plus"></b>添加活动</a>
             </li>
         </ul>
     </div>
@@ -49,7 +49,7 @@ var pageData = {
         </tbody>
     </table>
 </div>
-<div class="modal" id="acitveModal">
+<div class="modal" id="activeModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -57,7 +57,7 @@ var pageData = {
                 <h4 class="modal-title">添加活动</h4>
             </div>
             <div class="modal-body">
-                <form id='acitve_form'>
+                <form id='active_form'>
                     <input type="hidden" class="form-control" name="ftype" value="active">
                     <div class="form-group">
                         <label for="sname">活动名称</label>

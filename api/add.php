@@ -15,6 +15,9 @@
 			case 'active':
 				addActive($_POST);
 				break;
+			case 'notice':
+				addNotice($_POST);
+				break;
 			default:break;
 		}
 	}else{
@@ -76,5 +79,23 @@
 				returns("", 0);
 		}else{
 			returns("活动已存在", -1);
+		}
+	}
+
+	function addNotice($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"title" => $post['title']
+			])){
+			$last_active_id = $D->insert($dname, [
+				"title" => $post['title'],
+				"content" => $post['content'],
+				"time" => date("Y-m-d H:i:s")
+			]);
+				returns("", 0);
+		}else{
+			returns("公告已存在", -1);
 		}
 	}
