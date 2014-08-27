@@ -14,6 +14,45 @@ $(function() {
 	//导航
 	$("#navbar").find("#" + pageData.name).addClass("active")
 
+	//=========================服务========================
+	$("#bigSortModal_store").click(function() {
+		$("#errmsg").html("")
+		$.post("../api/add.php", $("#bigSort_form").serialize(), function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			} else {
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	$("#subSortModal_store").click(function() {
+		$("#errmsg").html("")
+		$.post("../api/add.php", $("#subSort_form").serialize(), function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			} else {
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	// $(".s_del").click(function() {
+	// 	if (window.confirm(delConfirmStr)) {
+	// 		$.post("../api/delete.php", {
+	// 			type: "store",
+	// 			id: $(this).attr("sid")
+	// 		}, function(data) {
+	// 			if (data.no == 0) {
+	// 				window.location.reload()
+	// 			}
+	// 		}, "json")
+	// 	}
+	// 	return false
+	// })
+	//=========================服务========================
 
 	//=========================门店========================
 	$("#save_store").click(function() {

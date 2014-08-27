@@ -18,10 +18,49 @@
 			case 'notice':
 				addNotice($_POST);
 				break;
+			case 's_sort';
+				addBigstore($_POST);
+				break;
+			case 'sub_sort';
+				addSubstore($_POST);
+				break;
 			default:break;
 		}
 	}else{
 		returns("参数错误", -1);
+	}
+
+	function addBigstore($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"sname" => $post['name']
+			])){
+			$D->insert($dname, [
+				"sname" => $post['name']
+			]);
+				returns("", 0);
+		}else{
+			returns("大类已存在", -1);
+		}
+	}
+
+	function addSubstore($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"name" => $post['name']
+			])){
+			$D->insert($dname, [
+				"sort_id" => $post['sort_id'],
+				"name" => $post['name']
+			]);
+				returns("", 0);
+		}else{
+			returns("大类已存在", -1);
+		}
 	}
 
 
