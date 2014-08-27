@@ -12,6 +12,9 @@
 			case 'employee':
 				addEmployee($_POST);
 				break;
+			case 'active':
+				addActive($_POST);
+				break;
 			default:break;
 		}
 	}else{
@@ -53,5 +56,25 @@
 				returns("", 0);
 		}else{
 			returns("员工已存在", -1);
+		}
+	}
+
+	function addActive($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"title" => $post['title']
+			])){
+			$last_active_id = $D->insert($dname, [
+				"title" => $post['title'],
+				"content" => $post['content'],
+				"member_price" => $post['mp'],
+				"non_member_price" => $post['nmp'],
+				"time" => $post['time']
+			]);
+				returns("", 0);
+		}else{
+			returns("活动已存在", -1);
 		}
 	}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>JIATONG</title>
-    <?=setCSS( 'bootstrap.min.css').setCSS( 'global.css')?>
+    <?=setCSS( 'bootstrap.min.css').setCSS( 'dp.css').setCSS( 'global.css')?>
 </head>
 
 <body>
@@ -23,6 +23,10 @@
                 <li id="store"><a href="store.php">门店管理</a>
                 </li>
                 <li id="employee"><a href="employee.php">员工管理</a>
+                </li>
+                <li id="notice"><a href="notice.php">公告管理</a>
+                </li>
+                <li id="active"><a href="active.php">活动发布管理</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -43,7 +43,7 @@ $(function() {
 	})
 	//=========================门店========================
 
-	//=========================门店========================
+	//=========================员工========================
 	$("#employee_store").click(function() {
 		$("#errmsg").html("")
 		$.post("../api/add.php", $("#employee_form").serialize(), function(data) {
@@ -69,6 +69,34 @@ $(function() {
 		}
 		return false
 	})
-	//=========================门店========================
+	//=========================员工========================
+
+	//=========================活动========================
+	$("#active_store").click(function() {
+		$("#errmsg").html("")
+		$.post("../api/add.php", $("#acitve_form").serialize(), function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			} else {
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	$(".a_del").click(function() {
+		if (window.confirm(delConfirmStr)) {
+			$.post("../api/delete.php", {
+				type: "active",
+				id: $(this).attr("aid")
+			}, function(data) {
+				if (data.no == 0) {
+					window.location.reload()
+				}
+			}, "json")
+		}
+		return false
+	})
+	//=========================活动========================
 
 })

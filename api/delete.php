@@ -14,6 +14,9 @@
 			case 'employee':
 				delEmployee($ids);
 				break;
+			case 'active':
+				delActive($ids);
+				break;
 			default:break;
 		}
 	}else{
@@ -54,5 +57,23 @@
 				returns("", 0);
 		}else{
 			returns("员工不存在", -1);
+		}
+	}
+
+	function delActive($id){
+		global $D;
+		$dname = "car_active";
+
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+			$last_user_id = $D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			]);
+				returns("", 0);
+		}else{
+			returns("活动不存在", -1);
 		}
 	}
