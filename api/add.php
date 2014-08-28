@@ -65,12 +65,13 @@
 				"dl_id" => $dl_id
 			])){
 				if($dl_id){
+					$s = $post['status'] == "on" ? 1 : 0;
 					$D->insert($dname, [
 						"member_num" => $post['member_num'],
 						"password" => md5($post['password']),
 						"dl_id" => $dl_id,
 						"origin_id" => $post['origin_id'],
-						"status" => $post['status'],
+						"status" => $s,
 					]);
 					returns("", 0);
 				}else{

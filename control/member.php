@@ -28,18 +28,20 @@ var pageData = {
             <tbody>
                 <?php foreach($origin as $o) { ?>
                 <tr>
-                    <td><?=$o['name']?></td>
+                    <td><?=$o['name']?><a href="#" oid="<?=$o['id']?>" class="glyphicon glyphicon-remove delIcon o_del" title="删除渠道"></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-9">
         <table class="table table-striped table-hover col-md-6" style="margin-top:20px">
             <thead>
                 <tr>
                     <th>会员名</th>
                     <th>会员卡号</th>
+                    <th>状态</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,6 +49,9 @@ var pageData = {
                 <tr>
                     <td><?=$m['name']?></td>
                     <td><?=$m['member_num']?></td>
+                    <td><?=$m['status'] ? "激活" : "未激活"?></td>
+                    <td><a class="m_del btn btn-danger" href="#" mid="<?=$m['id']?>">删除</a></td>
+                    <td><a class="ms_del btn btn-info" href="#" mid="<?=$m['id']?>" ms="<?=$m['status']?>">更新状态</a></td>
                 </tr>
                 <?php } ?>
             </tbody>

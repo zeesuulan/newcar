@@ -20,12 +20,52 @@
 			case 'notice':
 				delNotice($ids);
 				break;
+			case 'member':
+				delMember($ids);
+				break;
+			case 'channel':
+				delChannel($ids);
+				break;
 			default:break;
 		}
 	}else{
 		returns("参数错误", -1);
 	}
 
+	function delChannel($id) {
+		global $D;
+		$dname = "car_member_origin";
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+			$D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			]);
+				returns("", 0);
+		}else{
+			returns("渠道不存在", -1);
+		}
+	}
+			
+	function delMember($id) {
+		global $D;
+		$dname = "car_member";
+
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+			$D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			]);
+				returns("", 0);
+		}else{
+			returns("会员不存在", -1);
+		}
+	} 
 
 	function delStore($id){
 		global $D;
@@ -34,7 +74,7 @@
 		if ($D->has($dname, [
 				"id" => $id
 			])){
-			$last_user_id = $D->delete($dname, [
+			$D->delete($dname, [
 				"AND" => [
 					"id" => $id
 				]
@@ -52,7 +92,7 @@
 		if ($D->has($dname, [
 				"id" => $id
 			])){
-			$last_user_id = $D->delete($dname, [
+			$D->delete($dname, [
 				"AND" => [
 					"id" => $id
 				]
@@ -70,7 +110,7 @@
 		if ($D->has($dname, [
 				"id" => $id
 			])){
-			$last_user_id = $D->delete($dname, [
+			$D->delete($dname, [
 				"AND" => [
 					"id" => $id
 				]
@@ -88,7 +128,7 @@
 		if ($D->has($dname, [
 				"id" => $id
 			])){
-			$last_user_id = $D->delete($dname, [
+			$D->delete($dname, [
 				"AND" => [
 					"id" => $id
 				]

@@ -22,6 +22,10 @@ body{font-family:"Helvetica Neue",Helvetica,"微软雅黑"}
 	color: #f89406;
 }
 
+.delIcon{
+	float: right;
+}
+
 .panel-heading{
 	font-weight: bolder;
 }

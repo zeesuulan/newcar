@@ -67,47 +67,19 @@ $(function() {
 		return false
 	})
 
-	// $(".s_del").click(function() {
-	// 	if (window.confirm(delConfirmStr)) {
-	// 		$.post("../api/delete.php", {
-	// 			type: "store",
-	// 			id: $(this).attr("sid")
-	// 		}, function(data) {
-	// 			if (data.no == 0) {
-	// 				window.location.reload()
-	// 			}
-	// 		}, "json")
-	// 	}
-	// 	return false
-	// })
-	//=========================渠道========================
-
-	//=========================渠道========================
-	$("#channel_store").click(function() {
-		$("#errmsg").html("")
-		$.post("../api/add.php", $("#channel_form").serialize(), function(data) {
-			if (data.no == 0) {
-				window.location.reload()
-			} else {
-				$("#errmsg").html(data.msg)
-			}
-		}, "json")
+	$(".o_del").click(function() {
+		if (window.confirm(delConfirmStr)) {
+			$.post("../api/delete.php", {
+				type: "channel",
+				id: $(this).attr("oid")
+			}, function(data) {
+				if (data.no == 0) {
+					window.location.reload()
+				}
+			}, "json")
+		}
 		return false
 	})
-
-	// $(".s_del").click(function() {
-	// 	if (window.confirm(delConfirmStr)) {
-	// 		$.post("../api/delete.php", {
-	// 			type: "store",
-	// 			id: $(this).attr("sid")
-	// 		}, function(data) {
-	// 			if (data.no == 0) {
-	// 				window.location.reload()
-	// 			}
-	// 		}, "json")
-	// 	}
-	// 	return false
-	// })
 	//=========================渠道========================
 
 	//=========================用户========================
@@ -123,19 +95,32 @@ $(function() {
 		return false
 	})
 
-	// $(".s_del").click(function() {
-	// 	if (window.confirm(delConfirmStr)) {
-	// 		$.post("../api/delete.php", {
-	// 			type: "store",
-	// 			id: $(this).attr("sid")
-	// 		}, function(data) {
-	// 			if (data.no == 0) {
-	// 				window.location.reload()
-	// 			}
-	// 		}, "json")
-	// 	}
-	// 	return false
-	// })
+	$(".ms_del").click(function() {
+		$.post("../api/update.php", {
+			type: "member",
+			id: $(this).attr("mid"),
+			status: $(this).attr("ms")
+		}, function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			}
+		}, "json")
+		return false
+	})
+
+	$(".m_del").click(function() {
+		if (window.confirm(delConfirmStr)) {
+			$.post("../api/delete.php", {
+				type: "member",
+				id: $(this).attr("mid")
+			}, function(data) {
+				if (data.no == 0) {
+					window.location.reload()
+				}
+			}, "json")
+		}
+		return false
+	})
 	//=========================用户========================
 
 	//=========================门店========================
