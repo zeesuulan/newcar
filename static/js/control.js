@@ -54,6 +54,90 @@ $(function() {
 	// })
 	//=========================服务========================
 
+	//=========================渠道========================
+	$("#channel_store").click(function() {
+		$("#errmsg").html("")
+		$.post("../api/add.php", $("#channel_form").serialize(), function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			} else {
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	// $(".s_del").click(function() {
+	// 	if (window.confirm(delConfirmStr)) {
+	// 		$.post("../api/delete.php", {
+	// 			type: "store",
+	// 			id: $(this).attr("sid")
+	// 		}, function(data) {
+	// 			if (data.no == 0) {
+	// 				window.location.reload()
+	// 			}
+	// 		}, "json")
+	// 	}
+	// 	return false
+	// })
+	//=========================渠道========================
+
+	//=========================渠道========================
+	$("#channel_store").click(function() {
+		$("#errmsg").html("")
+		$.post("../api/add.php", $("#channel_form").serialize(), function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			} else {
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	// $(".s_del").click(function() {
+	// 	if (window.confirm(delConfirmStr)) {
+	// 		$.post("../api/delete.php", {
+	// 			type: "store",
+	// 			id: $(this).attr("sid")
+	// 		}, function(data) {
+	// 			if (data.no == 0) {
+	// 				window.location.reload()
+	// 			}
+	// 		}, "json")
+	// 	}
+	// 	return false
+	// })
+	//=========================渠道========================
+
+	//=========================用户========================
+	$("#member_store").click(function() {
+		$("#errmsg").html("")
+		$.post("../api/add.php", $("#member_form").serialize(), function(data) {
+			if (data.no == 0) {
+				window.location.reload()
+			} else {
+				$("#errmsg").html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	// $(".s_del").click(function() {
+	// 	if (window.confirm(delConfirmStr)) {
+	// 		$.post("../api/delete.php", {
+	// 			type: "store",
+	// 			id: $(this).attr("sid")
+	// 		}, function(data) {
+	// 			if (data.no == 0) {
+	// 				window.location.reload()
+	// 			}
+	// 		}, "json")
+	// 	}
+	// 	return false
+	// })
+	//=========================用户========================
+
 	//=========================门店========================
 	$("#save_store").click(function() {
 		$("#errmsg").html("")

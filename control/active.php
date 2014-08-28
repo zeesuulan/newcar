@@ -91,9 +91,9 @@ var pageData = {
 </div>
 <?php require "../public/control/footer.php"; ?>
 <?=setJS( "control.js").setJS( "dp.js").setJS( "locales/zh-CN.js")?>
-    <script>
-    $('#activeTime').datetimepicker({
-        format: 'yyyy-mm-dd hh:ii',
-        language: "zh-CN"
-    });
-    </script>
+<script>
+$('#activeTime').datetimepicker({
+    format: 'yyyy-mm-dd hh:ii',
+    language: "zh-CN"
+});
+</script>

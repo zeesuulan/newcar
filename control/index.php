@@ -7,6 +7,17 @@ var pageData = {
 <div class="container">
     <div class="col-md-4">
         <div class="panel panel-default">
+            <div class="panel-heading">会员</div>
+            <div class="panel-body">
+                目前拥有会员
+                <span class="cIndexNumber">
+                    <?=$m_num?>
+                </span>位
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
             <div class="panel-heading">雇员</div>
             <div class="panel-body">
                 目前拥有雇员
@@ -24,14 +35,6 @@ var pageData = {
                 <span class="cIndexNumber">
                     <?=$s_num?>
                 </span>家
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Panel heading</div>
-            <div class="panel-body">
-                Panel content
             </div>
         </div>
     </div>

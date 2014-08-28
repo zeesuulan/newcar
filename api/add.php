@@ -24,10 +24,78 @@
 			case 'sub_sort';
 				addSubstore($_POST);
 				break;
+			case 'member_origin';
+				addChannel($_POST);
+				break;
+			case 'member';
+				addMember($_POST);
+				break;
 			default:break;
 		}
 	}else{
 		returns("参数错误", -1);
+	}
+
+	function addMember($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+		$dl_db = "car_dl";
+
+		if($post['password'] != $post['confirm_password']){
+				returns("两次密码不一致", -1);
+		}
+
+		if(!$D->has($dl_db, [
+				"id_num" => $post['id_num']
+			])){
+			$dl_id = $D->insert($dl_db, [
+				"name" => $post['name'],
+				"id_num" => $post['id_num'],
+				"valid_date_start" => $post['valid_date_start'],
+				"valid_date_end" => $post['valid_date_end'],
+				"dl_level" => $post['dl_level'],
+				"gender" => $post['gender'],
+				"birthday" => $post['birthday'],
+				"address" => $post['address'],
+				"nationality" => $post['nationality'],
+				"firsttime" => $post['firsttime']
+			]);
+
+			if(!$D->has($dname, [
+				"dl_id" => $dl_id
+			])){
+				if($dl_id){
+					$D->insert($dname, [
+						"member_num" => $post['member_num'],
+						"password" => md5($post['password']),
+						"dl_id" => $dl_id,
+						"origin_id" => $post['origin_id'],
+						"status" => $post['status'],
+					]);
+					returns("", 0);
+				}else{
+					returns("操作失败", -1);
+				}
+			}
+		}else{
+			returns("驾驶证员已存在", -1);
+		}
+	}
+
+	function addChannel($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"name" => $post['name']
+			])){
+			$D->insert($dname, [
+				"name" => $post['name']
+			]);
+				returns("", 0);
+		}else{
+			returns("渠道已存在", -1);
+		}
 	}
 
 	function addBigstore($post){
