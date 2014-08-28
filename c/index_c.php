@@ -1,15 +1,5 @@
 <?php
 
-	$employee = $D->select("car_employee",[
-		"id"]);
-
-	$store = $D->select("car_store",[
-		"id"]);
-
-	$member = $D->select("car_member", [
-		 "id"
-		]);
-
-	$e_num = count($employee);
-	$s_num = count($store);
-	$m_num = count($member);
+	$e_num = $D->count("car_employee");
+	$s_num = $D->count("car_store");
+	$m_num = $D->count("car_member");
