@@ -27,7 +27,7 @@ var pageData = {
             <tbody>
                 <?php foreach($sort as $s) { ?>
                 <tr>
-                    <td><?=$s['sname']?></td>
+                    <td><?=$s['sname']?><a href="#" sort_id="<?=$s['id']?>" class="glyphicon glyphicon-remove delIcon sort_del" title="删除大类"></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -39,6 +39,7 @@ var pageData = {
                 <tr>
                     <th>所属大类</th>
                     <th>子类名称</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +47,7 @@ var pageData = {
                 <tr>
                     <td><?=$ss['sname']?></td>
                     <td><?=$ss['name']?></td>
+                    <td><a class="ss_del btn btn-danger" href="#" ssid="<?=$ss['id']?>">删除</a></td>
                 </tr>
                 <?php }  ?>
             </tbody>

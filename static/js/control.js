@@ -39,19 +39,37 @@ $(function() {
 		return false
 	})
 
-	// $(".s_del").click(function() {
-	// 	if (window.confirm(delConfirmStr)) {
-	// 		$.post("../api/delete.php", {
-	// 			type: "store",
-	// 			id: $(this).attr("sid")
-	// 		}, function(data) {
-	// 			if (data.no == 0) {
-	// 				window.location.reload()
-	// 			}
-	// 		}, "json")
-	// 	}
-	// 	return false
-	// })
+	$(".sort_del").click(function() {
+		if (window.confirm(delConfirmStr)) {
+			$.post("../api/delete.php", {
+				type: "big_sort",
+				id: $(this).attr("sort_id")
+			}, function(data) {
+				if (data.no == 0) {
+					window.location.reload()
+				}else{
+					alert(data.msg)
+				}
+			}, "json")
+		}
+		return false
+	})
+
+	$(".ss_del").click(function() {
+		if (window.confirm(delConfirmStr)) {
+			$.post("../api/delete.php", {
+				type: "sub_sort",
+				id: $(this).attr("ssid")
+			}, function(data) {
+				if (data.no == 0) {
+					window.location.reload()
+				}else{
+					alert(data.msg)
+				}
+			}, "json")
+		}
+		return false
+	})
 	//=========================服务========================
 
 	//=========================渠道========================

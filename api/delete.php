@@ -26,10 +26,58 @@
 			case 'channel':
 				delChannel($ids);
 				break;
+			case 'big_sort':
+				delBigSort($ids);
+				break;
+			case 'sub_sort':
+				delSubSort($ids);
+				break;
 			default:break;
 		}
 	}else{
 		returns("参数错误", -1);
+	}
+
+	function delSubSort($id) {
+		global $D;
+		$dname = "car_sub_sort";
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+
+			if($D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			])){
+				returns("", 0);
+			}else{
+				returns("删除失败", -1);
+			}
+		}else{
+			returns("子类不存在", -1);
+		}
+	}
+
+	function delBigSort($id) {
+		global $D;
+		$dname = "car_s_sort";
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+
+			if($D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			])){
+				returns("", 0);
+			}else{
+				returns("存在子类，不能删除", -1);
+			}
+		}else{
+			returns("大类不存在", -1);
+		}
 	}
 
 	function delChannel($id) {
