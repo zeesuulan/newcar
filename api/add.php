@@ -120,7 +120,10 @@
 		$dname = "car_".$post['ftype'];
 
 		if (!$D->has($dname, [
-				"name" => $post['name']
+				"AND" => [
+					"sort_id" => $post['sort_id'],
+					"name" => $post['name']
+				]
 			])){
 			$D->insert($dname, [
 				"sort_id" => $post['sort_id'],
@@ -128,7 +131,7 @@
 			]);
 				returns("", 0);
 		}else{
-			returns("大类已存在", -1);
+			returns("子类已存在", -1);
 		}
 	}
 
@@ -136,16 +139,18 @@
 	function addStore($post){
 		global $D;
 		$dname = "car_".$post['ftype'];
-
 		if (!$D->has($dname, [
 				"name" => $post['sname']
 			])){
-			$last_user_id = $D->insert($dname, [
+			if($D->insert($dname, [
 				"name" => $post['sname'],
 				"address" => $post['saddress'],
 				"manager" => $post['manager']
-			]);
+			])){
 				returns("", 0);
+			}else{
+				returns("所有选项都需要填写", -1);
+			}
 		}else{
 			returns("店名已存在", -1);
 		}

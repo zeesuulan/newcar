@@ -33,7 +33,7 @@ $(function() {
 			if (data.no == 0) {
 				window.location.reload()
 			} else {
-				$("#errmsg").html(data.msg)
+				alert(data.msg)
 			}
 		}, "json")
 		return false
@@ -190,6 +190,8 @@ $(function() {
 			}, function(data) {
 				if (data.no == 0) {
 					window.location.reload()
+				}else{
+					alert(data.msg)
 				}
 			}, "json")
 		}

@@ -69,6 +69,7 @@ var pageData = {
                     <div class="form-group">
                         <label for="sname">所在门店</label>
                         <select class="form-control" name="store_id">
+                            <option value="">不选择</option>
                             <?php foreach($store as $s) { ?>
                             <option value="<?=$s['id']?>">
                                 <?=$s[ 'name']?>
@@ -87,4 +88,4 @@ var pageData = {
     </div>
 </div>
 <?php require "../public/control/footer.php"; ?>
-<?=setJS( "control.js").setJS( "control_index.js")?>
+<?=setJS( "control.js")?>

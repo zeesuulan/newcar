@@ -140,12 +140,15 @@
 		if ($D->has($dname, [
 				"id" => $id
 			])){
-			$D->delete($dname, [
+			if($D->delete($dname, [
 				"AND" => [
 					"id" => $id
 				]
-			]);
+			])){
 				returns("", 0);
+			}else{
+				returns("员工为店长", -1);
+			}
 		}else{
 			returns("员工不存在", -1);
 		}
