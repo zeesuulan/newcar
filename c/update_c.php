@@ -20,6 +20,7 @@
 			$store = $D->select("car_store", [
 				"name", "id" 
 			]);
+
 			$employee = $D->get($db_name, "*", ["id[=]"=>$id]);
 		}else if($type == "active"){
 			$active = $D->get($db_name, "*", ["id[=]"=>$id]);
@@ -30,6 +31,22 @@
 				"ename", "id" 
 			]);
 			$store = $D->get($db_name, "*", ["id[=]"=>$id]);
+		}else if($type == 'member'){
+			$origin = $D->select("car_member_origin", [
+				 "id", "name"
+				]);
+
+			$member = $D->select("car_member",[
+				"[>]car_dl" => ["dl_id" => "id"],
+			], [
+			 "car_member.id", "car_member.dl_id", "car_member.origin_id", "car_dl.name",  "car_dl.id_num",  "car_dl.valid_date_start",  "car_dl.valid_date_end",  "car_dl.dl_level",  "car_dl.gender",  "car_dl.birthday",  "car_dl.address",  "car_dl.nationality",  "car_dl.firsttime", "car_member.member_num", "car_member.status"
+			], ["car_member.id"=>$id]);
+
+			$member = $member[0];
+
+			$dl = $D->select("car_dl_level", [
+				 "id", "name"
+				]);
 		}
 	}else{
 		Header("Location:".$SERVER_ROOT."index.php");

@@ -4,7 +4,7 @@
 		exit;
 	}
 
-	$noModify = "操作错误，或者并未做出修改";
+	$noModify = "并未做出修改，或者操作错误~";
 
 	if(isset($_POST)) {
 		switch ($_POST['type']) {
@@ -20,14 +20,61 @@
 			case 'store';
 				updateStore($_POST);
 				break;
+			case 'member';
+				updateMember($_POST);
+				break;
 			default:break;
 		}
 	}else{
 		returns("参数错误", -1);
 	}
 
+	function updateMember($post){
+		global $D, $noModify;
+		$dname = "car_".$post['type'];
+		$dl_db = "car_dl";
+
+		if($D->has($dname, [
+				"id" => $post['id']
+			])){
+
+			$s = isset($post['status']) ? 1 : 0;
+
+			$member = $D->update($dname, [
+				"member_num" => $post['member_num'],
+				"origin_id" => $post['origin_id'],
+				"status" => $s,
+			],  [
+				"id" => $post['id']
+			]);
+
+			$dl = $D->update($dl_db, [
+				"name" => $post['name'],
+				"id_num" => $post['id_num'],
+				"valid_date_start" => $post['valid_date_start'],
+				"valid_date_end" => $post['valid_date_end'],
+				"dl_level" => $post['dl_level'],
+				"gender" => $post['gender'],
+				"birthday" => $post['birthday'],
+				"address" => $post['address'],
+				"nationality" => $post['nationality'],
+				"firsttime" => $post['firsttime']
+			],  [
+				"id" => $post['dl_id']
+			]);
+
+			if($member || $dl){
+				returns("", 0);
+			}else{
+				returns($noModify, -1);
+			}
+		}else{
+			returns("驾驶证员已存在", -1);
+		}
+	}
+
 	function updateStore($post){
-		global $D;
+		global $D, $noModify;
 		$dname = "car_store";
 
 		if ($D->has($dname, [
@@ -50,7 +97,7 @@
 	}
 
 	function updateNotice($post){
-		global $D;
+		global $D, $noModify;
 		$dname = "car_notice";
 
 		if ($D->has($dname, [
@@ -72,7 +119,7 @@
 	}
 
 	function updateActive($post){
-		global $D;
+		global $D, $noModify;
 		$dname = "car_active";
 
 		if ($D->has($dname, [
@@ -97,7 +144,7 @@
 	}
 
 	function updateEmployee($post){
-		global $D;
+		global $D, $noModify;
 		$dname = "car_employee";
 
 		if ($D->has($dname, [
