@@ -50,8 +50,9 @@ var pageData = {
                     <td><?=$m['name']?></td>
                     <td><?=$m['member_num']?></td>
                     <td><?=$m['status'] ? "激活" : "未激活"?></td>
-                    <td><a class="m_del btn btn-danger" href="#" mid="<?=$m['id']?>">删除</a></td>
-                    <td><a class="ms_del btn btn-info" href="#" mid="<?=$m['id']?>" ms="<?=$m['status']?>">更换状态</a></td>
+                    <td><a class="m_del btn btn-danger" href="#" mid="<?=$m['id']?>">删除</a>
+                    <a class="ms_del btn btn-info" href="#" mid="<?=$m['id']?>" ms="<?=$m['status']?>">更换状态</a>
+                    <a class="btn btn-primary" href="update.php?type=member&id=<?=$m['id']?>" mid="">更新</a></td>
                 </tr>
                 <?php } ?>
             </tbody>

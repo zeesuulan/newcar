@@ -1,31 +1,31 @@
-body{font-family:"Helvetica Neue",Helvetica,"微软雅黑"}
-
-.glyphicon{
-	margin: 0 5px;
+body {
+    font-family: "Helvetica Neue", Helvetica, "微软雅黑";
+    font-size: 12px;
 }
-
-#wrap{
-	height:100%;
-	width:80%;
-	margin:0 auto;
-	border-left:1px solid #333;
-	border-right:1px solid #333;
+.glyphicon {
+    margin: 0 5px;
 }
-
-#errmsg{
+*, .btn, .form-control{
 	font-size: 12px;
 }
-
-.cIndexNumber{
-	font-size: 4rem;
-	margin: 0 10px;
-	color: #f89406;
+#wrap {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
 }
-
-.delIcon{
-	float: right;
+#errmsg {
+    font-size: 12px;
 }
-
-.panel-heading{
-	font-weight: bolder;
+.cIndexNumber {
+    font-size: 4rem;
+    margin: 0 10px;
+    color: #f89406;
+}
+.delIcon {
+    float: right;
+}
+.panel-heading {
+    font-weight: bolder;
 }
