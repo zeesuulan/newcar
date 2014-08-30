@@ -231,6 +231,19 @@ $(function() {
 		}
 		return false
 	})
+
+	$(".as_update").click(function(){
+		$.post("../api/update.php", {
+			type: "active",
+			id: $(this).attr("aid"),
+			status: $(this).attr("as")
+		}, function(data) {
+			if (data.no == 0) {
+				reload()
+			}
+		}, "json")
+		return false
+	})
 	//=========================活动========================
 
 	//=========================公告========================
@@ -257,6 +270,19 @@ $(function() {
 				}
 			}, "json")
 		}
+		return false
+	})
+
+	$(".n_update").click(function(){
+		$.post("../api/update.php", {
+			type: "notice",
+			id: $(this).attr("nid"),
+			status: $(this).attr("ns")
+		}, function(data) {
+			if (data.no == 0) {
+				reload()
+			}
+		}, "json")
 		return false
 	})
 	//=========================公告========================

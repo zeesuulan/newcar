@@ -38,6 +38,7 @@ var pageData = {
                 </td>
                 <td>
                     <a href="#" class="s_del btn btn-danger" sid="<?=$store[ 'id']?>" >删除</a>
+                    <a class="btn btn-primary" href="update.php?type=store&id=<?=$store['id']?>" mid="">更新</a>
                 </td>
             </tr>
             <?php } ?>

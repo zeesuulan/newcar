@@ -1,6 +1,6 @@
 <?php 
 
 	$active = $D->select("car_active", [
-		"title", "content", "member_price", "non_member_price", "time", "id"
+		"title", "content", "status", "member_price", "non_member_price", "time", "id"
 		]);
 	

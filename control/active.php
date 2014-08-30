@@ -22,6 +22,7 @@ var pageData = {
                 <th>活动内容</th>
                 <th>价格</th>
                 <th>活动时间</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -42,7 +43,12 @@ var pageData = {
                     <?=$a[ 'time']?>
                 </td>
                 <td>
+                    <?=twone($a['status'] , 1, "开启中" , "过期")?>
+                </td>
+                <td>
                     <a href="#" class="a_del btn btn-danger" aid="<?=$a[ 'id']?>" >删除</a>
+                    <a class="as_update btn btn-info" href="#" aid="<?=$a['id']?>" as="<?=$a['status']?>">更换状态</a>
+                    <a class="btn btn-primary" href="update.php?type=active&id=<?=$a['id']?>" mid="">更新</a>
                 </td>
             </tr>
             <?php } ?>

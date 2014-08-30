@@ -21,6 +21,7 @@ var pageData = {
                 <th>公告名称</th>
                 <th>公告内容</th>
                 <th>发布时间</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -37,7 +38,12 @@ var pageData = {
                     <?=$a[ 'time']?>
                 </td>
                 <td>
+                    <?=twone($a['status'] , 1, "开启中" , "过期")?>
+                </td>
+                <td>
                     <a href="#" class="n_del btn btn-danger" nid="<?=$a[ 'id']?>" >删除</a>
+                    <a class="n_update btn btn-info" href="#" nid="<?=$a['id']?>" ns="<?=$a['status']?>">更换状态</a>
+                    <a class="btn btn-primary" href="update.php?type=notice&id=<?=$a['id']?>" mid="">更新</a>
                 </td>
             </tr>
             <?php } ?>
@@ -64,7 +70,7 @@ var pageData = {
                     </div>
                     <div class="form-group">
                         <label for="content">同时发布</label>
-                        <input type="checkbox" checked="checked" name="published">
+                        <input type="checkbox" checked="checked" name="status">
                     </div>
                 </form>
             </div>
