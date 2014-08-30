@@ -1,14 +1,1 @@
-$(function() {
-	var form = $("#loginForm")
-
-	form.on('submit', function() {
-		$.post("api/sysLogin.php", $(this).serialize(), function(data) {
-			if (data.no != 0) {
-				$("#errmsg").html(data.msg)
-			} else {
-				window.location.href = 'control'
-			}
-		}, 'json')
-		return false
-	})
-})
+$(function(){var a=$("#loginForm");a.on("submit",function(){return $.post("api/sysLogin.php",$(this).serialize(),function(a){0!=a.no?$("#errmsg").html(a.msg):window.location.href="control"},"json"),!1})});
