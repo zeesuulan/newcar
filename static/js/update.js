@@ -1,0 +1,1 @@
+$(function(){var a=$("#update_form");a.on("submit",function(){return $.post("../api/update_info.php",a.serialize(),function(a){alert(0==a.no?"修改成功":a.msg)},"json"),!1})});

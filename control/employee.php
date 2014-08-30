@@ -42,6 +42,7 @@ var pageData = {
                 </td>
                 <td>
                     <a href="#" class="e_del btn btn-danger" eid="<?=$employee[ 'id']?>" >删除</a>
+                    <a class="btn btn-primary" href="update.php?type=employee&id=<?=$employee['id']?>" mid="">更新</a>
                 </td>
             </tr>
             <?php } ?>

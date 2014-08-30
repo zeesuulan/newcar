@@ -86,7 +86,7 @@ module.exports = function(grunt) {
       options: {
         mangle: true,
         compress: {
-          drop_console: true
+          // drop_console: true
         }
       },
       my_target: {
@@ -97,7 +97,8 @@ module.exports = function(grunt) {
           // '../output/js/service/s.js': ['../output/js/service/s.js'],
           // '../output/js/widget/w.js': ['../output/js/widget/w.js']
           'static/js/control.js': ['static/js_source/control.js'],
-          'static/js/index.js': ['static/js_source/index.js']
+          'static/js/index.js': ['static/js_source/index.js'],
+          'static/js/update.js': ['static/js_source/update.js']
         }
       }
     }

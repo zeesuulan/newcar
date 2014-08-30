@@ -19,3 +19,7 @@
 		exit;
 	}
 
+	function twone($condition, $match, $macth_one , $match_two = ""){
+		return ($condition == $match) ? $macth_one : $match_two;
+	}
+
