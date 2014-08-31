@@ -41,9 +41,9 @@ var pageData = {
                     <?=twone($a['status'] , 1, "开启中" , "过期")?>
                 </td>
                 <td>
-                    <a href="#" class="n_del btn btn-danger" nid="<?=$a[ 'id']?>" >删除</a>
-                    <a class="n_update btn btn-info" href="#" nid="<?=$a['id']?>" ns="<?=$a['status']?>">更换状态</a>
-                    <a class="btn btn-primary" href="update.php?type=notice&id=<?=$a['id']?>" mid="">更新</a>
+                    <a href="#" class="n_del btn btn-danger" nid="<?=$a[ 'id']?>" ><span class="glyphicon glyphicon-remove"></span>删除</a>
+                    <a class="n_update btn btn-info" href="#" nid="<?=$a['id']?>" ns="<?=$a['status']?>"><span class="glyphicon glyphicon-refresh"></span>更换状态</a>
+                    <a class="btn btn-primary" href="update.php?type=notice&id=<?=$a['id']?>" mid=""><span class="glyphicon glyphicon-pencil"></span>更新信息</a>
                 </td>
             </tr>
             <?php } ?>

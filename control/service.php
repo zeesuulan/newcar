@@ -47,7 +47,7 @@ var pageData = {
                 <tr>
                     <td><?=$ss['sname']?></td>
                     <td><?=$ss['name']?></td>
-                    <td><a class="ss_del btn btn-danger" href="#" ssid="<?=$ss['id']?>">删除</a></td>
+                    <td><a class="ss_del btn btn-danger" href="#" ssid="<?=$ss['id']?>"><span class="glyphicon glyphicon-remove"></span>删除</a></td>
                 </tr>
                 <?php }  ?>
             </tbody>

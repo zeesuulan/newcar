@@ -37,8 +37,8 @@ var pageData = {
                     <?=$store[ 'ename']?>
                 </td>
                 <td>
-                    <a href="#" class="s_del btn btn-danger" sid="<?=$store[ 'id']?>" >删除</a>
-                    <a class="btn btn-primary" href="update.php?type=store&id=<?=$store['id']?>" mid="">更新</a>
+                    <a href="#" class="s_del btn btn-danger" sid="<?=$store[ 'id']?>" ><span class="glyphicon glyphicon-remove"></span>删除</a>
+                    <a class="btn btn-primary" href="update.php?type=store&id=<?=$store['id']?>" mid=""><span class="glyphicon glyphicon-pencil"></span>更新信息</a>
                 </td>
             </tr>
             <?php } ?>

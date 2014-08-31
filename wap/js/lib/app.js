@@ -22,9 +22,9 @@ JT.config(function($routeProvider) {
 		templateUrl: 'template/active.html',
 		controller: "c_active"
 	}).
-	when('/intro', {
-		templateUrl: 'template/intro.html',
-		controller: "c_intro"
+	when('/notice', {
+		templateUrl: 'template/notice.html',
+		controller: "c_notice"
 	}).
 	when('/menu', {
 		templateUrl: 'template/menu.html',

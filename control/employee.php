@@ -41,8 +41,8 @@ var pageData = {
                     <?=$employee[ 'time']?>
                 </td>
                 <td>
-                    <a href="#" class="e_del btn btn-danger" eid="<?=$employee[ 'id']?>" >删除</a>
-                    <a class="btn btn-primary" href="update.php?type=employee&id=<?=$employee['id']?>" mid="">更新</a>
+                    <a href="#" class="e_del btn btn-danger" eid="<?=$employee[ 'id']?>" ><span class="glyphicon glyphicon-remove"></span>删除</a>
+                    <a class="btn btn-primary" href="update.php?type=employee&id=<?=$employee['id']?>" mid=""><span class="glyphicon glyphicon-pencil"></span>更新信息</a>
                 </td>
             </tr>
             <?php } ?>
