@@ -19,6 +19,15 @@
 		exit;
 	}
 
+	function wapReturns($data, $no){
+		$arr = array(
+			"no" => $no,
+			"data" => $data
+		);
+		print_r(json_encode($arr));
+		exit;
+	}
+
 	function twone($condition, $match, $macth_one , $match_two = ""){
 		return ($condition == $match) ? $macth_one : $match_two;
 	}
