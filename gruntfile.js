@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         // files: ['static/js_source/**/*.js'],
         files: ['*.html', 'template/*.html', 'js/**/*.js', 'css/*.css', 'less/*.less'],
         tasks: ['less:all','concat:all', 'uglify'],
-        options: {
+          options: {
           spawn: false,
         },
       },

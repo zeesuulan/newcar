@@ -2,7 +2,7 @@
 angular.module("JT")
 	.controller("c_car",
 		function($scope, $rootScope) {
-			$scope.adc = "asd"
+			$scope.navShow = true
 			if ($.cookie("jtusername")) {
 				$.get("../api/wapUserInfo.php",
 				 function(data) {

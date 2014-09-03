@@ -1,3 +1,12 @@
 <div id="intro">
-	intro
+    <div class="panel panel-warning" ng-repeat="n in notice">
+        <div class="panel-heading">{{n.title}}</div>
+        <div class="panel-body">
+            时间：{{n.time}}
+            <div class="content">
+                详细内容：
+                <pre>{{n.content}}</pre>
+            </div>
+        </div>
+    </div>
 </div>

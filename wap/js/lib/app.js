@@ -2,9 +2,9 @@
 
 var JT = angular.module("JT", ['ngRoute'])
 
-
 JT.config(function($routeProvider) {
 	
+
 	$routeProvider.
 	when('/index', {
 		templateUrl: 'template/index.html',
