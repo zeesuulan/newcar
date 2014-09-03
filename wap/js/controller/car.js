@@ -1,9 +1,23 @@
 'use strict'
 angular.module("JT")
-	.controller("c_car", 
+	.controller("c_car",
 		function($scope, $rootScope) {
-			$rootScope.pageTitle = PAGE_TITLE + "-- 车辆信息"
-			$rootScope.backURL = "/#/menu"
-			$rootScope.showNav = true
+			$scope.adc = "asd"
+			if ($.cookie("jtusername")) {
+				$.get("../api/wapUserInfo.php",
+				 function(data) {
+					if (data.no == 0) {
+						$scope.$apply(function(){
+							$scope.userInfo = data.data.member
+							$scope.gender = ($scope.userInfo.gender == 1) ? "男" : "女"
+						})
+					} else {
+						alert(data.data.msg)
+					}
+				}, 'json')
+			} else {
+				window.location.hash = "#/menu"
+			}
+
 		}
-	);
+);

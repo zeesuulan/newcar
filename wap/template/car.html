@@ -1,3 +1,56 @@
 <div id="car">
-	
+    <div class="panel panel-warning">
+        <div class="panel-heading">会员信息</div>
+        <div class="panel-body">
+        	<div>
+            <label>会员卡号:</label>
+            {{userInfo.member_num}}
+            </div>
+            <div>
+            <label>会员姓名:</label>
+            {{userInfo.name}}
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">驾照信息</div>
+        <div class="panel-body">
+            <div>
+            <label>会员姓名:</label>
+            {{userInfo.name}}
+            </div>
+            <div>
+            <label>身份证:</label>
+            {{userInfo.id_num}}
+            </div>
+            <div>
+            <label>有效起始日期:</label>
+            {{userInfo.valid_date_start}}
+            </div>
+            <div>
+            <label>有效结束日期:</label>
+            {{userInfo.valid_date_end}}
+            </div>
+            <div>
+            <label>初次领证:</label>
+            {{userInfo.firsttime}}
+            </div>
+            <div>
+            <label>生日:</label>
+            {{userInfo.birthday}}
+            </div>
+            <div>
+            <label>性别:</label>
+            {{gender}}
+            </div>
+            <div>
+            <label>地址:</label>
+            {{userInfo.address}}
+            </div>
+            <div>
+            <label>国籍:</label>
+            {{userInfo.nationality}}
+            </div>
+        </div>
+    </div>
 </div>

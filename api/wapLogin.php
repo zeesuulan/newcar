@@ -10,7 +10,9 @@
 					"password" => md5($_POST['password'])
 				]
 			])){
+				$id = $D->get("car_member", "id", ["member_num" => $_POST['memberNum']]);
 				$_SESSION["wap_username"] = $_POST['memberNum'];
+				$_SESSION["wap_user_id"] = $id;
 				wapReturns(array("username"=>$_POST['memberNum']), 0);
 		}else{
 			wapReturns(array("msg" => "用户名或者密码错误"), -1);

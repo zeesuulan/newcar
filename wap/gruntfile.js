@@ -107,6 +107,6 @@ module.exports = function(grunt) {
 
   // 自定义任务
   grunt.registerTask('default', ['connect:all', 'watch']);
-  grunt.registerTask('build', ['uglify']);
+  grunt.registerTask('build', ['watch']);
 
 };
