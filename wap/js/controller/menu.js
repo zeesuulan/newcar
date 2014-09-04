@@ -2,6 +2,7 @@
 angular.module("JT")
 	.controller("c_menu", 
 		function($scope, $rootScope) {
+			$(".navbar").hide()
 			$("#menu a").css({
 				"height" : $("body").height() / 5
 			})

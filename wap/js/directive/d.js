@@ -1,1 +1,1 @@
-JT.directive("wapheader",function(){return{restrict:"&",template:"template/header.html",replace:!0}});
+JT.directive("wapheader",function(){return{restrict:"E",template:"template/header.html",replace:!0,link:function(){}}});

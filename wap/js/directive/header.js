@@ -1,7 +1,8 @@
 JT.directive('wapheader', function() {
 	return {
-		restrict: '&',
+		restrict: 'E',
 		template: 'template/header.html',
-		replace: true
+		replace: true,
+		link: function(){}
 	};
 });
