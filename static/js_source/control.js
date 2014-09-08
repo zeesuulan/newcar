@@ -61,6 +61,10 @@ $(function() {
 		return false
 	})
 
+	$(".e_change").on("change", function(){
+		console.log($(this).val(), $(this).attr("bid"))
+	})
+
 	$(".ss_del").click(function() {
 		if (window.confirm(delConfirmStr)) {
 			$.post(deleteURL, {

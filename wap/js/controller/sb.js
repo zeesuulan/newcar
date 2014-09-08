@@ -37,7 +37,7 @@ angular.module("JT")
 				if ($scope.year && $scope.month) {
 					$scope.dates = []
 					for (var index = 0; index < (new Date($scope.year, $scope.month, 0).getDate()); ++index) {
-						$scope.dates.push(index+1)
+						$scope.dates.push(index + 1)
 					}
 				}
 			}
@@ -45,5 +45,17 @@ angular.module("JT")
 			$scope.bigSortChange = function() {
 				$scope.selectedSubSortList = $scope.subList[$scope.selectedBigSort]
 			}
+
+			$("#sbform").on("submit", function() {
+				$.post("../api/wapPostService.php",
+					$(this).serialize(), function(data) {
+						if (data.no == 0) {
+							alert("预约成功")
+							window.location.href = "#/bl"
+						} else {
+							alert(data.data.msg)
+						}
+					}, "json")
+			})
 		}
 );

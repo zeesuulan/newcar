@@ -1,3 +1,15 @@
 <div id="booklist">
-	booklist
+    <div class="panel panel-warning" ng-repeat="b in books">
+        <div class="panel-heading">{{b.sort_name}} - {{b.subsort_name}}</div>
+        <div class="panel-body">
+        	<div>订单编号：{{b.id}}</div>
+            <div>预约的时间：{{b.date}}
+                <span>{{b.time==0?"上午":"下午"}}</span>
+            </div>
+            <div class="content">
+                <div>预约的门店：{{b.store_name}}</div>
+                <div ng-show="b.ename">分配的技师：{{b.ename}}</div>
+            </div>
+        </div>
+    </div>
 </div>
