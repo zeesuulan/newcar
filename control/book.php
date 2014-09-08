@@ -42,7 +42,7 @@ var pageData = {
                     <?=$b[ 'date'].$b['time']?>
                 </td>
                 <td>
-                    <?=$b[ 'sort_name'].$b[ 'subsort_name']?>
+                    <?=$b[ 'sort_name']." - ".$b[ 'subsort_name']?>
                 </td>
                 <td>
                     <?=$b[ 'status']==1 ? "正常" : "已取消"?>
@@ -51,8 +51,8 @@ var pageData = {
                 <select class="form-control e_change" bid="<?=$b[ 'id']?>" name="employee">
                     <option value="">不选择</option>
                     <?php foreach($employee as $e) { ?>
-                    <option value="<?=$e['id']?>">
-                        <?=$e[ 'ename']?>
+                    <option value="<?=$e['id']?>" <?=($b["employee_id"] == $e['id'] ? "selected=selected" : "")?>>
+                        <?=$e[ 'ename']." - ".$e['store_name']?>
                     </option>
                     <?php } ?>
                 </select>

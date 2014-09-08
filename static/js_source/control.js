@@ -4,8 +4,9 @@ $(function() {
 	var delConfirmStr = "确定要删除嘛？",
 		deleteURL = "../api/delete.php",
 		addURL = "../api/add.php",
+		updateURL = "../api/update.php",
 		errmsg = $("#errmsg"),
-		reload = function(){
+		reload = function() {
 			window.location.reload()
 		}
 
@@ -53,7 +54,7 @@ $(function() {
 			}, function(data) {
 				if (data.no == 0) {
 					reload()
-				}else{
+				} else {
 					alert(data.msg)
 				}
 			}, "json")
@@ -61,8 +62,18 @@ $(function() {
 		return false
 	})
 
-	$(".e_change").on("change", function(){
-		console.log($(this).val(), $(this).attr("bid"))
+	$(".e_change").on("change", function() {
+		$.post(updateURL, {
+			type: "bookEm",
+			id: $(this).attr("bid"),
+			employee: $(this).val()
+		}, function(data) {
+			if (data.no == 0) {
+				alert("修改成功")
+			} else {
+				alert(data.msg)
+			}
+		}, "json")
 	})
 
 	$(".ss_del").click(function() {
@@ -73,7 +84,7 @@ $(function() {
 			}, function(data) {
 				if (data.no == 0) {
 					reload()
-				}else{
+				} else {
 					alert(data.msg)
 				}
 			}, "json")
@@ -124,7 +135,7 @@ $(function() {
 	})
 
 	$(".ms_del").click(function() {
-		$.post("../api/update.php", {
+		$.post("updateURL", {
 			type: "member",
 			id: $(this).attr("mid"),
 			status: $(this).attr("ms")
@@ -200,7 +211,7 @@ $(function() {
 			}, function(data) {
 				if (data.no == 0) {
 					reload()
-				}else{
+				} else {
 					alert(data.msg)
 				}
 			}, "json")
@@ -236,8 +247,8 @@ $(function() {
 		return false
 	})
 
-	$(".as_update").click(function(){
-		$.post("../api/update.php", {
+	$(".as_update").click(function() {
+		$.post("updateURL", {
 			type: "active",
 			id: $(this).attr("aid"),
 			status: $(this).attr("as")
@@ -277,8 +288,8 @@ $(function() {
 		return false
 	})
 
-	$(".n_update").click(function(){
-		$.post("../api/update.php", {
+	$(".n_update").click(function() {
+		$.post("updateURL", {
 			type: "notice",
 			id: $(this).attr("nid"),
 			status: $(this).attr("ns")

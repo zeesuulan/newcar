@@ -13,6 +13,7 @@
 		 "car_sub_sort.name(subsort_name)", 
 		 "car_employee.ename(ename)",
 		 "car_booking.time_id(time)",
+		 "car_booking.employee_id",
 		 "car_booking.status",
 		 "car_booking.id",
 		 "car_booking.book_date(date)",
@@ -20,6 +21,10 @@
 		]);
 
 	$employee = $D->select("car_employee", [
-			"ename", "id" 
+			"[>]car_store" => ["store_id" => "id"],
+		], [
+			"car_employee.ename",
+			"car_employee.id", 
+			"car_store.name(store_name)"
 		]);
 

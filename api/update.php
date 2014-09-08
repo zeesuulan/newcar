@@ -15,10 +15,30 @@
 			case 'notice';
 				updateNotice($_POST);
 				break;
+			case 'bookEm';
+				updateEmployee($_POST);
+				break;
 			default:break;
 		}
 	}else{
 		returns("参数错误", -1);
+	}
+
+	function updateEmployee($post){
+		global $D;
+		$dname = "car_booking";
+		if ($D->has($dname, [
+				"id" => $post['id']
+			])){
+			$D->update($dname, [
+				"employee_id" => $post['employee']
+			],  [
+				"id" => $post['id']
+			]);
+				returns("", 0);
+		}else{
+			returns("订单不存在", -1);
+		}
 	}
 
 	function updateActive($post){
