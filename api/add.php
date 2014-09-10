@@ -55,6 +55,7 @@
 				"valid_date_end" => $post['valid_date_end'],
 				"dl_level" => $post['dl_level'],
 				"gender" => $post['gender'],
+				"liesence" => $post['liesence'],
 				"birthday" => $post['birthday'],
 				"address" => $post['address'],
 				"nationality" => $post['nationality'],

@@ -135,7 +135,7 @@ $(function() {
 	})
 
 	$(".ms_del").click(function() {
-		$.post("updateURL", {
+		$.post(updateURL, {
 			type: "member",
 			id: $(this).attr("mid"),
 			status: $(this).attr("ms")
@@ -248,7 +248,7 @@ $(function() {
 	})
 
 	$(".as_update").click(function() {
-		$.post("updateURL", {
+		$.post(updateURL, {
 			type: "active",
 			id: $(this).attr("aid"),
 			status: $(this).attr("as")
@@ -289,7 +289,7 @@ $(function() {
 	})
 
 	$(".n_update").click(function() {
-		$.post("updateURL", {
+		$.post(updateURL, {
 			type: "notice",
 			id: $(this).attr("nid"),
 			status: $(this).attr("ns")

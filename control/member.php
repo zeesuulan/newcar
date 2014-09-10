@@ -40,6 +40,7 @@ var pageData = {
                 <tr>
                     <th>会员名</th>
                     <th>会员卡号</th>
+                    <th>车牌号</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -49,6 +50,7 @@ var pageData = {
                 <tr>
                     <td><?=$m['name']?></td>
                     <td><?=$m['member_num']?></td>
+                    <td><?=$m['liesence']?></td>
                     <td><?=twone($m['status'] , 1, "激活" , "未激活")?></td>
                     <td><a class="m_del btn btn-danger" href="#" mid="<?=$m['id']?>"><span class="glyphicon glyphicon-remove"></span>删除</a>
                     <a class="ms_del btn btn-info" href="#" mid="<?=$m['id']?>" ms="<?=$m['status']?>"><span class="glyphicon glyphicon-refresh"></span>更换状态</a>
@@ -88,6 +90,10 @@ var pageData = {
                     <div class="form-group">
                         <label for="title">会员身份证</label>
                         <input type="text" class="form-control" name="id_num" placeholder="会员身份证">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">车牌号</label>
+                        <input type="text" class="form-control" name="liesence" placeholder="车牌号">
                     </div>
                     <div class="form-group clearfix" style="margin:0 -15px 15px;">
                         <div class="col-md-6">
