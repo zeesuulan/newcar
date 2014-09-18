@@ -40,4 +40,4 @@ var pageData = {
     </div>
 </div>
 <?php require "../public/control/footer.php"; ?>
-<?=setJS( "control.js").setJS( "control_index.js")?>
+<?=setJS( "control.js")?>

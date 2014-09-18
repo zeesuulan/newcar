@@ -6,8 +6,8 @@ var pageData = {}
     <form class="form col-md-8 col-md-offset-2" id="update_form">
         <input type="hidden" class="form-control" name="type" value="<?=$type?>">
         <input type="hidden" class="form-control" name="id" value="<?=$id?>">
-        <input type="hidden" class="form-control" name="dl_id" value="<?=$member["dl_id"]?>">
         <?php if($type=="member" ) { ?>
+        <input type="hidden" class="form-control" name="dl_id" value="<?=$member["dl_id"]?>">
         <h3>修改用户信息</h3>
         <div class="form-group">
             <label for="title">会员卡</label>
@@ -40,8 +40,8 @@ var pageData = {}
                 <label for="title">驾照类型</label>
                 <select name="dl_level" class="form-control">
                     <?php foreach($dl as $d) { ?>
-                    <option value="<?=$d['id']?>" <?=twone($d[ 'id'], $member[ 'dl_level'], "selected='selected'") ?>>
-                        <?=$d[ 'name']?>
+                    <option value="<?=$d['id']?>" <?=twone($d['id'], $member['dl_level'], "selected='selected'") ?>>
+                        <?=$d['name']?>
                     </option>
                     <?php } ?>
                 </select>
@@ -49,8 +49,8 @@ var pageData = {}
             <div class="col-md-6">
                 <label for="title">性别</label>
                 <select name="gender" class="form-control">
-                    <option value="1" <?=twone(1, $member[ 'gender'], "selected='selected'") ?>>男</option>
-                    <option value="0" <?=twone(0, $member[ 'gender'], "selected='selected'") ?>>女</option>
+                    <option value="1" <?=twone(1, $member['gender'], "selected='selected'") ?>>男</option>
+                    <option value="0" <?=twone(0, $member['gender'], "selected='selected'") ?>>女</option>
                 </select>
             </div>
         </div>
@@ -73,15 +73,15 @@ var pageData = {}
                 <label for="title">来源渠道</label>
                 <select name="origin_id" class="form-control">
                     <?php foreach($origin as $o) { ?>
-                    <option value="<?=$o['id']?>" <?=twone($o['id'], $member[ 'origin_id'], "selected='selected'") ?>>
-                        <?=$o[ 'name']?>
+                    <option value="<?=$o['id']?>" <?=twone($o['id'], $member['origin_id'], "selected='selected'") ?>>
+                        <?=$o['name']?>
                     </option>
                     <?php } ?>
                 </select>
             </div>
             <div class="col-md-6">
                 <label for="title">激活</label>
-                <input type="checkbox" class="form-control" name="status" <?=twone($member[ 'status'], true, "checked='checked'") ?>>
+                <input type="checkbox" class="form-control" name="status" <?=twone($member['status'], true, "checked='checked'") ?>>
             </div>
         </div>
         <?php } ?>
@@ -89,18 +89,18 @@ var pageData = {}
         <h3>修改门店信息</h3>
         <div class="form-group">
             <label for="sname">门店名称</label>
-            <input type="text" class="form-control" name="sname" value="<?=$store[" name "]?>">
+            <input type="text" class="form-control" name="sname" value="<?=$store['name']?>">
         </div>
         <div class="form-group">
             <label for="saddress">门店地址</label>
-            <input type="text" class="form-control" name="saddress" value="<?=$store[" address "]?>">
+            <input type="text" class="form-control" name="saddress" value="<?=$store['address']?>">
         </div>
         <div class="form-group">
             <label for="sname">门店负责人</label>
             <select class="form-control" name="manager">
                 <?php foreach($employee as $e) { ?>
-                <option value="<?=$e['id']?>" <?=twone($e[ 'id'], $store[ 'manager'], "selected='selected'") ?>>
-                    <?=$e[ 'ename']?>
+                <option value="<?=$e['id']?>" <?=twone($e['id'], $store['manager'], "selected='selected'") ?>>
+                    <?=$e['ename']?>
                 </option>
                 <?php } ?>
             </select>
@@ -115,7 +115,7 @@ var pageData = {}
         <div class="form-group">
             <label for="content">活动内容</label>
             <textarea name="content" class="form-control" cols="30" rows="7">
-                <?=$notice[ 'content']?>
+                <?=$notice['content']?>
             </textarea>
         </div>
         <?php } ?>
@@ -140,7 +140,7 @@ var pageData = {}
         <div class="form-group">
             <label for="content">活动内容</label>
             <textarea name="content" class="form-control" cols="30" rows="7">
-                <?=$active[ 'content']?>
+                <?=$active['content']?>
             </textarea>
         </div>
         <?php } ?>
@@ -159,8 +159,8 @@ var pageData = {}
             <select class="form-control" name="store_id">
                 <option value="">不选择</option>
                 <?php foreach($store as $s) { ?>
-                <option value="<?=$s['id']?>" <?=twone($employee[ 'store_id'], $s[ 'id'], "selected='selected'") ?>>
-                    <?=$s[ 'name']?>
+                <option value="<?=$s['id']?>" <?=twone($employee['store_id'], $s['id'], "selected='selected'") ?>>
+                    <?=$s['name']?>
                 </option>
                 <?php } ?>
             </select>
