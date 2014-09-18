@@ -38,6 +38,21 @@ var pageData = {
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">订单</div>
+            <div class="panel-body">
+                目前拥有订单
+                <span class="cIndexNumber">
+                    <?=$b_num?>
+                </span>条，
+                完成
+                <span class="cIndexNumber">
+                    <?=$bd_num?>
+                </span>条
+            </div>
+        </div>
+    </div>
 </div>
 <?php require "../public/control/footer.php"; ?>
 <?=setJS( "control.js")?>

@@ -16,6 +16,7 @@
 		 "car_booking.employee_id",
 		 "car_booking.status",
 		 "car_booking.id",
+		 "car_booking.done",
 		 "car_booking.book_date(date)",
 		 "car_booking.id(id)",
 		]);

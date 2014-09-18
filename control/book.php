@@ -27,6 +27,7 @@ var pageData = {
                 <th>状态</th>
                 <th>分配技师</th>
                 <th>操作</th>
+                <th>完成状态</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +40,7 @@ var pageData = {
                     <?=$b[ 'store_name']?>
                 </td>
                 <td>
-                    <?=$b[ 'date'].$b['time']?>
+                    <?=$b[ 'date']." ".($b['time'] ? "上午":"下午")?>
                 </td>
                 <td>
                     <?=$b[ 'sort_name']." - ".$b[ 'subsort_name']?>
@@ -58,8 +59,12 @@ var pageData = {
                 </select>
                 </td>
                 <td>
-                    <a href="#" class="e_del btn btn-danger" eid="<?=$b[ 'id']?>" ><span class="glyphicon glyphicon-remove"></span>删除</a>
-                    <a class="btn btn-primary" href="update.php?type=employee&id=<?=$b['id']?>" mid=""><span class="glyphicon glyphicon-pencil"></span>更新状态</a>
+                    <a class="btn btn-info b_ok" href="#" bid="<?=$b['id']?>"><span class="glyphicon glyphicon-ok"></span>完成</a>
+                    <a class="b_cancel btn btn-primary" href="#" bid="<?=$b['id']?>" bs="<?=$b['statue']?>"><span class="glyphicon glyphicon-stop"></span>取消</a>
+                    <a href="#" class="b_del btn btn-danger" bid="<?=$b[ 'id']?>" ><span class="glyphicon glyphicon-remove"></span>删除</a>
+                </td>
+                <td>
+                    <?=$b['done']==1 ? "已完成" : "未完成"?>
                 </td>
             </tr>
             <?php } ?>

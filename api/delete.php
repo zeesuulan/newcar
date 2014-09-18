@@ -11,6 +11,9 @@
 			case 'store':
 				delStore($ids);
 				break;
+			case 'book':
+				delBook($ids);
+				break;
 			case 'employee':
 				delEmployee($ids);
 				break;
@@ -36,6 +39,27 @@
 		}
 	}else{
 		returns("参数错误", -1);
+	}
+
+	function delBook($id){
+		global $D;
+		$dname = "car_booking";
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+
+			if($D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			])){
+				returns("", 0);
+			}else{
+				returns("删除失败", -1);
+			}
+		}else{
+			returns("订单不存在", -1);
+		}
 	}
 
 	function delSubSort($id) {

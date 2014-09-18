@@ -93,6 +93,52 @@ $(function() {
 	})
 	//=========================服务========================
 
+	//=========================订单========================
+	$(".b_ok").click(function(){
+		$.post(updateURL, {
+			type: "bookingDone",
+			id: $(this).attr("bid")
+		}, function(data) {
+			if (data.no == 0) {
+				alert("修改成功")
+				reload()
+			} else {
+				alert(data.msg)
+			}
+		}, "json")
+	})
+
+	$(".b_cancel").click(function(){
+		$.post(updateURL, {
+			type: "booking",
+			id: $(this).attr("bid"),
+			status: $(this).attr("bs")
+		}, function(data) {
+			if (data.no == 0) {
+				alert("修改成功")
+				reload()
+			} else {
+				alert(data.msg)
+			}
+		}, "json")
+	})
+
+	$(".b_del").click(function(){
+		if (window.confirm(delConfirmStr)) {
+			$.post(deleteURL, {
+				type: "book",
+				id: $(this).attr("bid")
+			}, function(data) {
+				if (data.no == 0) {
+					reload()
+				}
+			}, "json")
+		}
+		return false
+	})
+	//=========================订单========================
+
+
 	//=========================渠道========================
 	$("#channel_store").click(function() {
 		errmsg.html("")
