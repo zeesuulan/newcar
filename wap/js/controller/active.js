@@ -2,6 +2,7 @@
 angular.module("JT")
 	.controller("c_active", 
 		function($scope, $rootScope) {
+			$(".navbar").show()
 			$.get("../api/wapUserInfo.php?" + Math.random(), function(data) {
 				if (data.no == 0) {
 					window.USER = {

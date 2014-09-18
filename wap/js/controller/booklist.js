@@ -6,7 +6,6 @@ angular.module("JT")
 
 			$.get("../api/wapBookList.php", function(data) {
 				if (data.no == 0) {
-					console.log(data.data.book)
 					$scope.$apply(function() {
 						$scope.books = data.data.book
 					})

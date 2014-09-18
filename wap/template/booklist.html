@@ -1,6 +1,6 @@
 <div id="booklist">
     <div class="panel panel-warning" ng-repeat="b in books">
-        <div class="panel-heading">{{b.sort_name}} - {{b.subsort_name}}</div>
+        <div class="panel-heading">{{b.sort_name}} - {{b.subsort_name}} <span class="status" ng-show={{b.done}}>已完成</span></div>
         <div class="panel-body">
         	<div>订单编号：{{b.id}}</div>
             <div>预约的时间：{{b.date}}

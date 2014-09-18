@@ -2,6 +2,7 @@
 angular.module("JT")
 	.controller("c_login",
 		function($scope, $rootScope) {
+			$(".navbar").hide()
 			if (!$.cookie("jtusername")) {
 				$("#loginForm").on("submit", function() {
 					$.post("../api/wapLogin.php", $(this).serialize(), function(data) {

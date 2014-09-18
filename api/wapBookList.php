@@ -19,6 +19,7 @@
 		 "car_booking.time_id(time)",
 		 "car_booking.book_date(date)",
 		 "car_booking.id(id)",
+		 "car_booking.done(done)",
 		],[
 			"AND" => [
 				"car_booking.member_id" => $_SESSION["wap_user_id"],
@@ -29,7 +30,7 @@
 		if($book) {
 			wapReturns(array("username"=>$_SESSION["wap_username"], "book" => $book,  "isLogin" => $is_login), 0);
 		}else{
-			wapReturns(array("msg" => "数据有误"), -1);
+			wapReturns(array("username"=>$_SESSION["wap_username"], "book" => array(),  "isLogin" => $is_login), 0);
 		}
 	}else{
 		wapReturns(array("username"=>"", "isLogin" => $is_login), -1);
