@@ -10,7 +10,7 @@
 <body>
     <div class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">JIATONG</a>
+            <a class="navbar-brand" href="index.php">首页</a>
         </div>
         <div class="navbar-collapse collapse navbar-responsive-collapse" id="navbar">
             <ul class="nav navbar-nav">

@@ -11,7 +11,9 @@
 
 <body style="height:100%">
     <div class="jumbotron" id="wrap">
-        <h1 style="text-align:center">JIATONG</h1>
+        <div id="logo">
+            <img src="static/logo.jpg">
+        </div>
         <form class="form" style="width:30%;margin:50px auto" id="loginForm">
             <div class="form-group">
                 <label for="username" class="control-label">

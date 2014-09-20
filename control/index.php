@@ -5,6 +5,9 @@ var pageData = {
 }
 </script>
 <div class="container">
+     <div id="logo">
+            <img src="../static/logo.jpg">
+        </div>
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">会员</div>
@@ -56,3 +59,8 @@ var pageData = {
 </div>
 <?php require "../public/control/footer.php"; ?>
 <?=setJS( "control.js")?>
+<script>
+    $("#logo").fadeIn().animate({
+        "top": "0"
+    })
+</script>

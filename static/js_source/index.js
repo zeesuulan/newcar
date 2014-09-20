@@ -11,4 +11,8 @@ $(function() {
 		}, 'json')
 		return false
 	})
+
+	$("#logo").fadeIn().animate({
+		"top": "0"
+	})
 })

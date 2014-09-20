@@ -1,1 +1,1 @@
-$(function(){var a=$("#loginForm");a.on("submit",function(){return $.post("api/sysLogin.php",$(this).serialize(),function(a){0!=a.no?$("#errmsg").html(a.msg):window.location.href="control"},"json"),!1})});
+$(function(){var a=$("#loginForm");a.on("submit",function(){return $.post("api/sysLogin.php",$(this).serialize(),function(a){0!=a.no?$("#errmsg").html(a.msg):window.location.href="control"},"json"),!1}),$("#logo").fadeIn().animate({top:"0"})});

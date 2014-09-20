@@ -8,6 +8,28 @@ body, h3 {
 *, .btn, .form-control{
 	font-size: 12px;
 }
+#logo{
+    width: 284px;
+    height: 284px;
+    margin: 0 auto;
+    display: none;
+    position: relative;
+    top: -360px;
+    margin-bottom: 30px;
+}
+#logo img, #pagelogo img{
+    border-radius: 50%;
+    box-shadow: 0 0 30px #aaa;
+    width: 100%;
+    height: 100%;
+}
+#pagelogo{
+    width: 45px;
+    height: 45px;
+}
+#pagelogo img{
+    box-shadow: none;
+}
 #wrap {
     height: 100%;
     width: 80%;
