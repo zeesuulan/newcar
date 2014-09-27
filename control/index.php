@@ -5,9 +5,9 @@ var pageData = {
 }
 </script>
 <div class="container">
-     <div id="logo">
-            <img src="../static/logo.jpg">
-        </div>
+    <div id="logo">
+        <img src="../static/logo.jpg">
+    </div>
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">会员</div>
@@ -48,8 +48,7 @@ var pageData = {
                 目前拥有订单
                 <span class="cIndexNumber">
                     <?=$b_num?>
-                </span>条，
-                完成
+                </span>条， 完成
                 <span class="cIndexNumber">
                     <?=$bd_num?>
                 </span>条
@@ -59,8 +58,8 @@ var pageData = {
 </div>
 <?php require "../public/control/footer.php"; ?>
 <?=setJS( "control.js")?>
-<script>
+    <script>
     $("#logo").fadeIn().animate({
         "top": "0"
     })
-</script>
+    </script>
