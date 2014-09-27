@@ -14,7 +14,7 @@ angular.module("JT")
 								$scope.bigSort = data.data.big_sort
 								$scope.stores = data.data.store
 								$.each(data.data.sub_sort, function(index, item) {
-									if (typeof($scope.subList[item.sort_id]) != "array") {
+									if (typeof($scope.subList[item.sort_id]) != "object") {
 										$scope.subList[item.sort_id] = []
 									}
 									$scope.subList[item.sort_id].push([item.id, item.name])
