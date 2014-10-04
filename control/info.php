@@ -1,13 +1,14 @@
-<?php require "../lib/config.php";require "../lib/jump.php";require "../public/control/header.php";require "../c/update_c.php"; ?>
+<?php require "../lib/config.php";require "../lib/jump.php";require "../public/control/header.php";require "../c/info_c.php"; ?>
 <script>
 var pageData = {}
 </script>
 <div class="container">
-    <form class="form col-md-8 col-md-offset-2" id="update_form" >
+    <div class="col-md-8 col-md-offset-2" id="info-box" >
         <input type="hidden" class="form-control" name="type" value="<?=$type?>">
         <input type="hidden" class="form-control" name="id" value="<?=$id?>">
          <p>
-            <a href="<?=$type?>.php">返回列表</a>
+        	<a href="<?=$type?>.php">返回列表</a>
+        	<a href="update.php?type=member&id=<?=$id?>">修改信息</a>
         </p>
         <?php if($type=="member" ) { ?>
         <input type="hidden" class="form-control" name="dl_id" value="<?=$member["dl_id"]?>">
@@ -144,14 +145,13 @@ var pageData = {}
         <div class="form-group clearfix">
             <label for="title">业务员</label>
             <select class="form-control" name="employee_id">
-                <option value="">不选择</option>
                 <?php foreach($employee as $e) { ?>
                 <option value="<?=$e['id']?>" <?=twone($e['id'], $member['employee_id'], "selected='selected'") ?>>
                     <?=$e[ 'ename']." - ".$e['store_name']?>
                 </option>
                 <?php } ?>
             </select>
-        </div>
+	    </div>
         <?php } ?>
         <?php if($type=="store" ) { ?>
         <h3>修改门店信息</h3>
@@ -234,16 +234,11 @@ var pageData = {}
             </select>
         </div>
         <?php } ?>
-        <button class="btn btn-primary">更新信息</button>
-    </form>
+    </div>
 </div>
 
 <?php require "../public/control/footer.php"; ?>
-<?=setJS( "update.js").setJS( "dp.js").setJS( "locales/zh-CN.js")?>
 <script>
-$('.dp').datetimepicker({
-    format: 'yyyy-mm-dd',
-    language: "zh-CN",
-    minView: "2"
-});
+	$("input").attr("disabled", "disabled")
+	$("select").attr("disabled", "disabled")
 </script>

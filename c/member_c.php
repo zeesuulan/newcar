@@ -4,6 +4,10 @@
 		 "id", "name"
 		]);
 
+	$sort = $D->select("car_member_sort", [
+		 "id", "sort_txt"
+		]);
+
 	$member = $D->select("car_member",[
 			"[>]car_dl" => ["dl_id" => "id"],
 		], [
@@ -16,3 +20,10 @@
 		 "id", "name"
 		]);
 	
+	$employee = $D->select("car_employee", [
+			"[>]car_store" => ["store_id" => "id"],
+		], [
+			"car_employee.ename",
+			"car_employee.id", 
+			"car_store.name(store_name)"
+		]);

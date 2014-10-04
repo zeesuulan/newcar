@@ -161,11 +161,41 @@ $(function() {
 				if (data.no == 0) {
 					reload()
 				}
+				alert(data.msg)
 			}, "json")
 		}
 		return false
 	})
 	//=========================渠道========================
+
+	//=========================类型========================
+	$("#ms_store").click(function() {
+		errmsg.html("")
+		$.post(addURL, $("#ms_form").serialize(), function(data) {
+			if (data.no == 0) {
+				reload()
+			} else {
+				errmsg.html(data.msg)
+			}
+		}, "json")
+		return false
+	})
+
+	$(".msort_del").click(function() {
+		if (window.confirm(delConfirmStr)) {
+			$.post(deleteURL, {
+				type: "member_sort",
+				id: $(this).attr("msid")
+			}, function(data) {
+				if (data.no == 0) {
+					reload()
+				}
+				alert(data.msg)
+			}, "json")
+		}
+		return false
+	})
+	//=========================类型========================
 
 	//=========================用户========================
 	$("#member_store").click(function() {

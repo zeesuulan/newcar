@@ -29,6 +29,9 @@
 			case 'channel':
 				delChannel($ids);
 				break;
+			case 'member_sort':
+				delmemberSort($ids);
+				break;
 			case 'big_sort':
 				delBigSort($ids);
 				break;
@@ -110,14 +113,39 @@
 		if ($D->has($dname, [
 				"id" => $id
 			])){
-			$D->delete($dname, [
+			$did = $D->delete($dname, [
 				"AND" => [
 					"id" => $id
 				]
 			]);
+			if($did) {
 				returns("", 0);
+			}else{
+				returns("渠道下存在会员，不能删除", -1);
+			}
 		}else{
 			returns("渠道不存在", -1);
+		}
+	}
+
+	function delmemberSort($id) {
+		global $D;
+		$dname = "car_member_sort";
+		if ($D->has($dname, [
+				"id" => $id
+			])){
+			$did = $D->delete($dname, [
+				"AND" => [
+					"id" => $id
+				]
+			]);
+			if($did) {
+				returns("", 0);
+			}else{
+				returns("类型下存在会员，不能删除", -1);
+			}
+		}else{
+			returns("类型不存在", -1);
 		}
 	}
 			

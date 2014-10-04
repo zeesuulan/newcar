@@ -9,9 +9,9 @@ var pageData = {
         <ul class="nav">
             <li><a href="book.php"><b class="glyphicon glyphicon-th-list"></b>订单列表</a>
             </li>
-            <li><a href="#overview-mobile"><b class="glyphicon glyphicon-th-list"></b>已完成列表</a>
+            <li><a href="book.php?status=1"><b class="glyphicon glyphicon-th-list"></b>已完成列表</a>
             </li>
-            <li><a href="#overview-type-links"><b class="glyphicon glyphicon-th-list"></b>未完成列表</a>
+            <li><a href="book.php?status=0"><b class="glyphicon glyphicon-th-list"></b>未完成列表</a>
             </li>
         </ul>
     </div>

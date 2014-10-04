@@ -30,6 +30,9 @@
 			case 'member';
 				addMember($_POST);
 				break;
+			case 'member_sort';
+				addMemberSort($_POST);
+				break;
 			default:break;
 		}
 	}else{
@@ -59,6 +62,9 @@
 				"birthday" => $post['birthday'],
 				"address" => $post['address'],
 				"nationality" => $post['nationality'],
+				"engineNumber" => $post['engineNumber'],
+				"frameNumber" => $post['frameNumber'],
+				"liesenceFileNumber" => $post['liesenceFileNumber'],
 				"firsttime" => $post['firsttime']
 			]);
 
@@ -67,14 +73,28 @@
 			])){
 				if($dl_id){
 					$s = $post['status'] == "on" ? 1 : 0;
-					$D->insert($dname, [
+					$member_id = $D->insert($dname, [
 						"member_num" => $post['member_num'],
 						"password" => md5($post['password']),
 						"dl_id" => $dl_id,
 						"origin_id" => $post['origin_id'],
+						"phoneNumber" => $post['phoneNumber'],
+						"brand" => $post['brand'],
+						"insurer" => $post['insurer'],
+						"insurancePeriod" => $post['insurancePeriod'],
+						"memberValid" => $post['memberValid'],
+						"memberSort" => $post['memberSort'],
+						"employee_id" => $post['employee_id'],
 						"status" => $s,
 					]);
-					returns("", 0);
+					if($member_id != 0) {
+						returns("", 0);
+					}else{
+						$D->delete($dl_db, [
+							"id" => $dl_id
+						]);
+						returns("操作失败", -1);
+					}
 				}else{
 					returns("操作失败", -1);
 				}
@@ -97,6 +117,22 @@
 				returns("", 0);
 		}else{
 			returns("渠道已存在", -1);
+		}
+	}
+
+	function addMemberSort($post){
+		global $D;
+		$dname = "car_".$post['ftype'];
+
+		if (!$D->has($dname, [
+				"sort_txt" => $post['sort_txt']
+			])){
+			$D->insert($dname, [
+				"sort_txt" => $post['sort_txt']
+			]);
+				returns("", 0);
+		}else{
+			returns("用户类型已存在", -1);
 		}
 	}
 

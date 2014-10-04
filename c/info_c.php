@@ -1,6 +1,6 @@
 <?php 
 
- 	if(!isset($_GET['type']) || !isset($_GET["id"])) {
+ 	if(!isset($_GET['type']) && !isset($_GET["id"])) {
 		Header("Location:".$SERVER_ROOT."index.php");
  	}
 
@@ -38,13 +38,7 @@
 			$sort = $D->select("car_member_sort", [
 				 "id", "sort_txt"
 				]);
-			$employee = $D->select("car_employee", [
-				"[>]car_store" => ["store_id" => "id"],
-			], [
-				"car_employee.ename",
-				"car_employee.id", 
-				"car_store.name(store_name)"
-			]);
+
 			$member = $D->select("car_member",[
 				"[>]car_dl" => ["dl_id" => "id"],
 			], [

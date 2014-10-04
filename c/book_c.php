@@ -1,5 +1,11 @@
 <?php 
 	
+	$status = array();
+
+	if(isset($_GET['status'])) {
+		$status = array("car_booking.done" => $_GET['status']);
+	}
+
 	$book = $D->select("car_booking",[
 			"[>]car_member" => ["member_id" => "id"],
 			"[>]car_store" => ["store_id" => "id"],
@@ -19,7 +25,7 @@
 		 "car_booking.done",
 		 "car_booking.book_date(date)",
 		 "car_booking.id(id)",
-		]);
+		],$status);
 
 	$employee = $D->select("car_employee", [
 			"[>]car_store" => ["store_id" => "id"],
