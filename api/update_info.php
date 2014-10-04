@@ -44,6 +44,13 @@
 				"member_num" => $post['member_num'],
 				"origin_id" => $post['origin_id'],
 				"status" => $s,
+				"phoneNumber" => $post['phoneNumber'],
+				"brand" => $post['brand'],
+				"insurer" => $post['insurer'],
+				"insurancePeriod" => $post['insurancePeriod'],
+				"memberValid" => $post['memberValid'],
+				"memberSort" => $post['memberSort'],
+				"employee_id" => $post['employee_id'],
 			],  [
 				"id" => $post['id']
 			]);
@@ -58,7 +65,10 @@
 				"birthday" => $post['birthday'],
 				"address" => $post['address'],
 				"nationality" => $post['nationality'],
-				"firsttime" => $post['firsttime']
+				"firsttime" => $post['firsttime'],
+				"engineNumber" => $post['engineNumber'],
+				"frameNumber" => $post['frameNumber'],
+				"liesenceFileNumber" => $post['liesenceFileNumber']
 			],  [
 				"id" => $post['dl_id']
 			]);

@@ -7,7 +7,7 @@ var pageData = {
 <div class="col-md-2">
     <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
         <ul class="nav">
-            <li><a href="book.php"><b class="glyphicon glyphicon-th-list"></b>会员列表</a>
+            <li><a href="member.php"><b class="glyphicon glyphicon-th-list"></b>会员列表</a>
             </li>
             <li><a href="#" data-toggle="modal" data-target="#mModal"><b class="glyphicon glyphicon-plus"></b>新增会员</a>
             </li>

@@ -34,7 +34,7 @@ var pageData = {
             <?php foreach($book as $b) { ?>
             <tr>
                 <td>
-                    <?=$b[ 'member_num']?>
+                    <a href="info.php?type=book&id=<?=$b['id']?>"><?=$b[ 'member_num']?></a>
                 </td>
                 <td>
                     <?=$b[ 'store_name']?>

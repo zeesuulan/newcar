@@ -6,10 +6,22 @@ var pageData = {}
     <div class="col-md-8 col-md-offset-2" id="info-box" >
         <input type="hidden" class="form-control" name="type" value="<?=$type?>">
         <input type="hidden" class="form-control" name="id" value="<?=$id?>">
-         <p>
+        <p>
         	<a href="<?=$type?>.php">返回列表</a>
-        	<a href="update.php?type=member&id=<?=$id?>">修改信息</a>
+             <?php if($type!="book" ) { ?>
+            	<a href="update.php?type=<?=$type?>&id=<?=$id?>">修改信息</a>
+            <?php }?>
         </p>
+        <?php if($type=="book" ) { ?>
+            <h3>订单信息</h3>
+            <p><label>预约序列：</label>No. <?=$book['id']?></p>
+            <p><label>会员卡号：</label><?=$book['member_num']?></p>
+            <p><label>预定门店：</label><?=$book['store_name']?></p>
+            <p><label>预定服务：</label><?=$book['sort_name'].'-'.$book['subsort_name']?></p>
+            <p><label>预定技师：</label><?=$book['ename']?></p>
+            <p><label>预定时间：</label><?=$book['date'].' '.($book['time']? "上午" : "下午")?></p>
+            <p><label>完成状态：</label><?=$book['done'] ? "已完成" : "未完成"?></p>
+        <?php }?>
         <?php if($type=="member" ) { ?>
         <input type="hidden" class="form-control" name="dl_id" value="<?=$member["dl_id"]?>">
         <h3>用户信息</h3>
