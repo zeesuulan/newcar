@@ -21,6 +21,7 @@ var pageData = {}
             <p><label>预定技师：</label><?=$book['ename']?></p>
             <p><label>预定时间：</label><?=$book['date'].' '.($book['time']? "上午" : "下午")?></p>
             <p><label>完成状态：</label><?=$book['done'] ? "已完成" : "未完成"?></p>
+            <p><label>订单备注：</label><?=$book['summary']?></p>
         <?php }?>
         <?php if($type=="member" ) { ?>
         <input type="hidden" class="form-control" name="dl_id" value="<?=$member["dl_id"]?>">
@@ -166,7 +167,7 @@ var pageData = {}
 	    </div>
         <?php } ?>
         <?php if($type=="store" ) { ?>
-        <h3>修改门店信息</h3>
+        <h3>门店信息</h3>
         <div class="form-group">
             <label for="sname">门店名称</label>
             <input type="text" class="form-control" name="sname" value="<?=$store['name']?>">
@@ -187,7 +188,7 @@ var pageData = {}
         </div>
         <?php } ?>
         <?php if($type=="notice" ) { ?>
-        <h3>修改公告信息</h3>
+        <h3>公告信息</h3>
         <div class="form-group">
             <label for="title">活动名称</label>
             <input type="text" class="form-control" name="title" value="<?=$notice['title']?>">
@@ -200,7 +201,7 @@ var pageData = {}
         </div>
         <?php } ?>
         <?php if($type=="active" ) { ?>
-        <h3>修改活动信息</h3>
+        <h3>活动信息</h3>
         <div class="form-group">
             <label for="sname">活动名称</label>
             <input type="text" class="form-control" name="title" value="<?=$active['title']?>">
@@ -225,14 +226,73 @@ var pageData = {}
         </div>
         <?php } ?>
         <?php if($type=="employee" ) { ?>
-        <h3>修改员工信息</h3>
+        <h3>员工信息</h3>
         <div class="form-group">
             <label for="sname">员工姓名</label>
             <input type="text" class="form-control" name="ename" value="<?=$employee['ename']?>">
         </div>
         <div class="form-group">
-            <label for="sname">联系方式</label>
+            <label for="sname">员工工号</label>
+            <input type="text" class="form-control" name="eid" value="<?=$employee['eid']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">身份证</label>
+            <input type="text" class="form-control" name="id_num" value="<?=$employee['id_num']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">员工生日</label>
+            <input type="text" class="form-control" name="birthday" value="<?=$employee['birthday']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">电话</label>
             <input type="text" class="form-control" name="phone" value="<?=$employee['phone']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">地址</label>
+            <input type="text" class="form-control" name="address" value="<?=$employee['address']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">入职时间</label>
+            <input type="text" class="form-control" name="entryTime" value="<?=$employee['entryTime']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">入职渠道</label>
+            <select name="entryWay" class="form-control">
+                <option value="1" <?=twone("1", $employee['status'], "selected='selected'") ?>>公开招聘</option>
+                <option value="2" <?=twone("2", $employee['status'], "selected='selected'") ?>>介绍</option>
+                <option value="" <?=twone("", $employee['status'], "selected='selected'") ?>>备注</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="entryWayTxt" value="<?=$employee['entryWayTxt']?>"  placeholder="入职渠道备注">
+        </div>
+        <div class="form-group">
+            <label for="sname">所属部门</label>
+            <input type="text" class="form-control" name="department" value="<?=$employee['department']?>">
+        </div>
+         <div class="form-group">
+            <label for="sname">所属岗位</label>
+            <input type="text" class="form-control" name="position" value="<?=$employee['position']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">紧急联络人</label>
+            <input type="text" class="form-control" name="emergencyContactor" value="<?=$employee['emergencyContactor']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">紧急联络人电话</label>
+            <input type="text" class="form-control" name="emergencyContactPhone" value="<?=$employee['emergencyContactPhone']?>">
+        </div>
+        <div class="form-group">
+            <label for="sname">员工状态</label>
+            <select class="form-control" name="status">
+                <?php foreach($employee_status as $key => $es) { ?>
+                    <option value="<?=$key?>" <?=twone($key, $employee['status'], "selected='selected'") ?>><?=$es?></option>
+                <?php } ?>
+                <option value="">备注</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="statusTxt" value="<?=$employee['statusTxt']?>" placeholder="状态备注">
         </div>
         <div class="form-group">
             <label for="sname">所在门店</label>

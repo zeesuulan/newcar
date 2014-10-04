@@ -203,10 +203,28 @@
 			$last_user_id = $D->insert($dname, [
 				"ename" => $post['ename'],
 				"phone" => $post['phone'],
+				"id_num" => $post['id_num'],
+				"eid" => $post['eid'],
+				"birthday" => $post['birthday'],
+				"address" => $post['address'],
+				"entryTime" => $post['entryTime'],
+				"entryWay" => ($post['entryWay'] != 0) ? $post['entryWay'] : "",
+				"entryWayTxt" => ($post['entryWay'] == 0) ? $post['entryWayTxt'] : "",
+				"department" => $post['department'],
+				"position" => $post['position'],
+				"emergencyContactor" => $post['emergencyContactor'],
+				"emergencyContactPhone" => $post['emergencyContactPhone'],
+				"status" => ($post['status'] != 0) ? $post['status'] : "",
+				"statusTxt" => ($post['status'] == 0) ? $post['statusTxt'] : "",
 				"store_id" => $post['store_id'],
 				"time" => date("Y-m-d H:i:s")
 			]);
+			
+			if($last_user_id){
 				returns("", 0);
+			}else{
+				returns("员工已存在", -1);
+			}
 		}else{
 			returns("员工已存在", -1);
 		}

@@ -33,6 +33,7 @@
 				 "car_booking.book_date(date)",
 				 "car_booking.id(id)",
 				 "car_booking.done(done)",
+				 "car_booking.summary",
 				],
 				[
 					"car_booking.id" => $id,

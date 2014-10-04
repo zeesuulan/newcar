@@ -163,6 +163,19 @@
 			if($D->update($dname, [
 				"ename" => $post['ename'],
 				"phone" => $post['phone'],
+				"id_num" => $post['id_num'],
+				"eid" => $post['eid'],
+				"birthday" => $post['birthday'],
+				"address" => $post['address'],
+				"entryTime" => $post['entryTime'],
+				"entryWay" => $post['entryWay'],
+				"entryWayTxt" => ($post['entryWay'] == 0) ? $post['entryWayTxt'] : "",
+				"department" => $post['department'],
+				"position" => $post['position'],
+				"emergencyContactor" => $post['emergencyContactor'],
+				"emergencyContactPhone" => $post['emergencyContactPhone'],
+				"status" => $post['status'],
+				"statusTxt" => ($post['status'] == 0) ? $post['statusTxt'] : "",
 				"store_id" => $post['store_id'],
 			],  [
 				"id" => $post['id']

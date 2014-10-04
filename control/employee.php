@@ -29,7 +29,7 @@ var pageData = {
             <?php foreach($list as $employee) { ?>
             <tr>
                 <td>
-                    <?=$employee[ 'ename']?>
+                    <a href="info.php?type=employee&id=<?=$employee['id']?>"><?=$employee[ 'ename']?></a>
                 </td>
                 <td>
                     <?=$employee[ 'phone']?>
@@ -64,8 +64,67 @@ var pageData = {
                         <input type="text" class="form-control" name="ename" placeholder="员工姓名">
                     </div>
                     <div class="form-group">
-                        <label for="sname">联系方式</label>
-                        <input type="text" class="form-control" name="phone" placeholder="联系方式">
+                        <label for="sname">员工工号</label>
+                        <input type="text" class="form-control" name="eid" placeholder="员工工号">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">身份证</label>
+                        <input type="text" class="form-control" name="id_num" placeholder="身份证">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">员工生日</label>
+                        <input type="text" class="form-control dp" name="birthday" placeholder="员工生日">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">电话</label>
+                        <input type="text" class="form-control" name="phone" placeholder="电话">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">地址</label>
+                        <input type="text" class="form-control" name="address" placeholder="地址">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">入职时间</label>
+                        <input type="text" class="form-control dp" name="entryTime" placeholder="入职时间">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">入职渠道</label>
+                        <select name="entryWay" class="form-control">
+                            <option value="1">公开招聘</option>
+                            <option value="2">介绍</option>
+                            <option value="">备注</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="entryWayTxt" placeholder="备注">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">所属部门</label>
+                        <input type="text" class="form-control" name="department" placeholder="所属部门">
+                    </div>
+                     <div class="form-group">
+                        <label for="sname">所属岗位</label>
+                        <input type="text" class="form-control" name="position" placeholder="所属岗位">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">紧急联络人</label>
+                        <input type="text" class="form-control" name="emergencyContactor" placeholder="紧急联络人">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">紧急联络人电话</label>
+                        <input type="text" class="form-control" name="emergencyContactPhone" placeholder="紧急联络人电话">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">员工状态</label>
+                        <select class="form-control" name="status">
+                            <?php foreach($employee_status as $key => $es) { ?>
+                                <option value="<?=$key?>"><?=$es?></option>
+                            <?php } ?>
+                            <option value="">备注</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="statusTxt" placeholder="备注">
                     </div>
                     <div class="form-group">
                         <label for="sname">所在门店</label>
@@ -89,4 +148,44 @@ var pageData = {
     </div>
 </div>
 <?php require "../public/control/footer.php"; ?>
-<?=setJS( "control.js")?>
+<?=setJS( "control.js").setJS( "dp.js").setJS( "locales/zh-CN.js")?>
+<script>
+$('.dp').datetimepicker({
+    format: 'yyyy-mm-dd',
+    language: "zh-CN",
+    minView: "2"
+});
+
+
+function test(){
+    $.post("../api/add.php", 
+        {
+            "ftype" :"employee",
+            "ename" : "dddddd" + Math.random(),
+            "phone" : "12333123123",
+            "id_num" : "123123123",
+            "eid" : "3213123",
+            "birthday" : "123213",
+            "address" : "123123",
+            "entryTime" : "123123",
+            "entryWay" : 1,
+            "entryWayTxt" : "asdasd",
+            "department" : "2333",
+            "position" : "11222",
+            "emergencyContactor" : "4444",
+            "emergencyContactPhone" : "4444",
+            "status" : "",
+            "statusTxt" : "statusTxt",
+            "store_id" : "22"
+        }, function(data) {
+            console.log(data)
+            return
+        if (data.no == 0) {
+            reload()
+        } else {
+            errmsg.html(data.msg)
+        }
+    }, "json")
+}
+
+</script>

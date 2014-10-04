@@ -27,3 +27,5 @@
 		'username' => $DATABASE_USERNAME,
 		'password' => $DATABASE_PASSWORD
 	]);
+
+	$employee_status = array("1" => "在职","2" => "离职", "3" => "休假");
