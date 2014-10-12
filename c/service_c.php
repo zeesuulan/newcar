@@ -1,5 +1,9 @@
 <?php 
 
+	if(!isAdmin()){
+		Header("Location:".$SERVER_ROOT."control.php");
+	}
+	
 	$sort = $D->select("car_s_sort", [
 		"sname", "id"
 		]);

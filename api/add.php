@@ -179,14 +179,19 @@
 		if (!$D->has($dname, [
 				"name" => $post['sname']
 			])){
-			if($D->insert($dname, [
-				"name" => $post['sname'],
-				"address" => $post['saddress'],
-				"manager" => $post['manager']
-			])){
-				returns("", 0);
+			if($post['password'] == $post['confirm_password']){
+				if($D->insert($dname, [
+					"name" => $post['sname'],
+					"address" => $post['saddress'],
+					"password" => md5($post['password']),
+					"manager" => $post['manager']
+				])){
+					returns("", 0);
+				}else{
+					returns("所有选项都需要填写", -1);
+				}
 			}else{
-				returns("所有选项都需要填写", -1);
+				returns("两次密码不一致", -1);
 			}
 		}else{
 			returns("店名已存在", -1);

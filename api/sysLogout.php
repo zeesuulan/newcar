@@ -4,5 +4,5 @@
 	unset($_SESSION['username']);
 	session_destroy();
 
-	returns("", 0);
+	returns(array("url" => $SERVER_ROOT), 0);
 	

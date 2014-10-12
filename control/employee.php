@@ -155,37 +155,4 @@ $('.dp').datetimepicker({
     language: "zh-CN",
     minView: "2"
 });
-
-
-function test(){
-    $.post("../api/add.php", 
-        {
-            "ftype" :"employee",
-            "ename" : "dddddd" + Math.random(),
-            "phone" : "12333123123",
-            "id_num" : "123123123",
-            "eid" : "3213123",
-            "birthday" : "123213",
-            "address" : "123123",
-            "entryTime" : "123123",
-            "entryWay" : 1,
-            "entryWayTxt" : "asdasd",
-            "department" : "2333",
-            "position" : "11222",
-            "emergencyContactor" : "4444",
-            "emergencyContactPhone" : "4444",
-            "status" : "",
-            "statusTxt" : "statusTxt",
-            "store_id" : "22"
-        }, function(data) {
-            console.log(data)
-            return
-        if (data.no == 0) {
-            reload()
-        } else {
-            errmsg.html(data.msg)
-        }
-    }, "json")
-}
-
 </script>

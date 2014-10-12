@@ -19,7 +19,7 @@ var pageData = {
         <thead>
             <tr>
                 <th>门店名称</th>
-                <th>门店地址</th>
+                <th>门店地址</th> 
                 <th>门店负责人</th>
                 <th>操作</th>
             </tr>
@@ -58,6 +58,14 @@ var pageData = {
                     <div class="form-group">
                         <label for="sname">门店名称</label>
                         <input type="text" class="form-control" name="sname" placeholder="门店名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">门店密码</label>
+                        <input type="password" class="form-control" name="password" placeholder="门店密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">确认门店密码</label>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="确认门店密码">
                     </div>
                     <div class="form-group">
                         <label for="saddress">门店地址</label>

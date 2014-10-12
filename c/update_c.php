@@ -1,7 +1,7 @@
 <?php 
-
+	
  	if(!isset($_GET['type']) || !isset($_GET["id"])) {
-		Header("Location:".$SERVER_ROOT."index.php");
+		Header("Location:".$SERVER_ROOT."control.php");
  	}
 
  	$db_map = array(

@@ -16,10 +16,13 @@
             <ul class="nav navbar-nav">
                 <li id="member"><a href="member.php">会员管理</a>
                 </li>
+                <?php if(isAdmin()) { ?>
                 <li id="service"><a href="service.php">服务管理</a>
                 </li>
+                <?php } ?>
                 <li id="book"><a href="book.php">订单管理</a>
                 </li>
+                <?php if(isAdmin()) { ?>
                 <li id="store"><a href="store.php">门店管理</a>
                 </li>
                 <li id="employee"><a href="employee.php">员工管理</a>
@@ -28,9 +31,10 @@
                 </li>
                 <li id="active"><a href="active.php">活动发布管理</a>
                 </li>
+                 <?php } ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" id="logout">退出<span>(<?=$_SESSION['username']?>)</span></a>
+                <li><a href="#" id="logout">退出<span>（<?=$_SESSION['username']?>）</span></a>
                 </li>
             </ul>
         </div>

@@ -16,6 +16,7 @@ $(function() {
 				reload()
 			}
 		}, "json")
+		return false
 	})
 
 	//导航

@@ -32,3 +32,8 @@
 		return ($condition == $match) ? $macth_one : $match_two;
 	}
 
+	function isAdmin(){
+		global $_SESSION;
+		return isset($_SESSION['admin']) && $_SESSION['admin'];
+	}
+

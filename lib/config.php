@@ -14,7 +14,7 @@
 	$DATABASE_NAME = 'car';
 
 
-	$VERSION = '1';
+	$VERSION = time();
 
 
 	require $APP_ROOT."lib/tools.php";

@@ -305,47 +305,4 @@ $('.dp').datetimepicker({
     language: "zh-CN",
     minView: "2"
 });
-
-
-function test(){
-    $.post("../api/add.php", 
-        {
-            "ftype" :"member",
-            "confirm_password": "123123",
-            "name" : Math.random(),
-            "id_num" : Math.random(),
-            "valid_date_start" : "2014-09-09",
-            "valid_date_end" : "2014-09-09",
-            "dl_level" : "1",
-            "gender" : "1",
-            "liesence" : "321",
-            "birthday" : "2014-09-09",
-            "address" : "123",
-            "nationality" : "2",
-            "engineNumber" : "23",
-            "frameNumber" : "23",
-            "liesenceFileNumber" : "213",
-            "firsttime" : "2014-09-09",
-            "member_num" : "3213123123",
-            "password" : "123123",
-            "origin_id" : "2",
-            "phoneNumber" : "asddd",
-            "brand" : "asddd",
-            "insurer" : "asddd",
-            "insurancePeriod" : "2014-09-09",
-            "memberValid" : "2014-09-09",
-            "memberSort" : "2",
-            "employee_id" : "24",
-            "status" : 'on'
-        }, function(data) {
-            console.log(data)
-            return
-        if (data.no == 0) {
-            reload()
-        } else {
-            errmsg.html(data.msg)
-        }
-    }, "json")
-}
-
 </script>

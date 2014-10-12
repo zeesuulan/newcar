@@ -1,5 +1,9 @@
 <?php 
 
+	if(!isAdmin()){
+		Header("Location:".$SERVER_ROOT."control.php");
+	}
+
 	$list = $D->select("car_employee", [
 			"[>]car_store" => ["store_id" => "id"],
 		],[
