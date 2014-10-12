@@ -27,7 +27,7 @@
 					"password" => md5($_POST['password'])
 				]
 			]);
-			$_SESSION["username"] = $_POST['username']."门店账号";
+			$_SESSION["username"] = $_POST['username']."-门店账号";
 			$_SESSION["store_id"] = $store_id[0];
 			$_SESSION["admin"] = false;
 			returns("", 0);
