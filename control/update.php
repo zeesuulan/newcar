@@ -142,6 +142,16 @@ var pageData = {}
             </div>
         </div>
         <div class="form-group clearfix">
+            <label for="title">所属门店</label>
+             <select class="form-control" name="store_id">
+                <?php foreach($store as $ss) { ?>
+                <option value="<?=$ss['id']?>" <?=twone($ss['id'], $member['store_id'], "selected='selected'") ?>>
+                    <?=$ss['name']?>
+                </option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class="form-group clearfix">
             <label for="title">业务员</label>
             <select class="form-control" name="employee_id">
                 <option value="">不选择</option>

@@ -65,6 +65,10 @@
 				 "id", "sort_txt"
 				]);
 
+			$store = $D->select("car_store",[
+				"id", "name"
+			]);
+
 			$member = $D->select("car_member",[
 				"[>]car_dl" => ["dl_id" => "id"],
 			], [
@@ -77,6 +81,7 @@
 				"car_member.insurer",
 				"car_member.memberValid",
 				"car_member.employee_id",
+				"car_member.store_id",
 				"car_member.memberSort",
 				"car_dl.name",
 				"car_dl.id_num",

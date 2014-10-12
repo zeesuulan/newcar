@@ -85,6 +85,7 @@
 						"memberValid" => $post['memberValid'],
 						"memberSort" => $post['memberSort'],
 						"employee_id" => $post['employee_id'],
+						"store_id" => $post['store_id'],
 						"status" => $s,
 					]);
 					if($member_id != 0) {

@@ -8,13 +8,19 @@
 		 "id", "sort_txt"
 		]);
 
-	$member = $D->select("car_member",[
-			"[>]car_dl" => ["dl_id" => "id"],
-		], [
-			"car_member.id", "car_dl.name", "car_member.member_num", "car_member.status", "car_dl.liesence"
-		],[
-			"ORDER" => "car_member.id DESC",
+	$store = $D->select("car_store",[
+		"id", "name"
 		]);
+
+	// if(isAdmin()){
+		$member = $D->select("car_member",[
+				"[>]car_dl" => ["dl_id" => "id"],
+			], [
+				"car_member.id", "car_dl.name", "car_member.member_num", "car_member.status", "car_dl.liesence"
+			],[
+				"ORDER" => "car_member.id DESC",
+			]);
+	// }
 
 	$dl = $D->select("car_dl_level", [
 		 "id", "name"
