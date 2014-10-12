@@ -38,6 +38,18 @@
 				"id" => $post['id']
 			])){
 
+			if(!isAdmin()) {
+				$isSameStore = $D->has($dname, [
+					"AND" => [
+						"id" => $post['id'],
+						'store_id' => $_SESSION['store_id']
+					]]);
+
+				if(!$isSameStore) {
+					returns("没有操作权限", -1);
+				}
+			}
+
 			$s = isset($post['status']) ? 1 : 0;
 
 			$member = $D->update($dname, [
@@ -79,7 +91,7 @@
 				returns($noModify, -1);
 			}
 		}else{
-			returns("驾驶证员已存在", -1);
+			returns("驾驶证员不存在", -1);
 		}
 	}
 

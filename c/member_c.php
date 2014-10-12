@@ -12,7 +12,7 @@
 		"id", "name"
 		]);
 
-	// if(isAdmin()){
+	if(isAdmin()){
 		$member = $D->select("car_member",[
 				"[>]car_dl" => ["dl_id" => "id"],
 			], [
@@ -20,7 +20,16 @@
 			],[
 				"ORDER" => "car_member.id DESC",
 			]);
-	// }
+	}else{
+		$member = $D->select("car_member",[
+				"[>]car_dl" => ["dl_id" => "id"],
+			], [
+				"car_member.id", "car_dl.name", "car_member.member_num", "car_member.status", "car_dl.liesence"
+			],[
+				"store_id" => $_SESSION['store_id'],
+				"ORDER" => "car_member.id DESC",
+			]);
+	}
 
 	$dl = $D->select("car_dl_level", [
 		 "id", "name"

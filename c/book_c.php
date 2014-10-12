@@ -6,6 +6,15 @@
 		$status = array("car_booking.done" => $_GET['status']);
 	}
 
+	if(!isAdmin()) {
+		$status['car_booking.store_id'] = $_SESSION['store_id'];
+	}
+
+
+	if(count($status) > 1) {
+		$status = array("AND" => $status);
+	}
+
 	$book = $D->select("car_booking",[
 			"[>]car_member" => ["member_id" => "id"],
 			"[>]car_store" => ["store_id" => "id"],
@@ -25,7 +34,11 @@
 		 "car_booking.done",
 		 "car_booking.book_date(date)",
 		 "car_booking.id(id)",
-		],$status);
+		], $status);
+
+	if(!$book) {
+		$book = array();
+	}
 
 	$employee = $D->select("car_employee", [
 			"[>]car_store" => ["store_id" => "id"],
@@ -33,5 +46,7 @@
 			"car_employee.ename",
 			"car_employee.id", 
 			"car_store.name(store_name)"
+		], [
+			"car_store.id" => $_SESSION['store_id']
 		]);
 

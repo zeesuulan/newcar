@@ -302,13 +302,13 @@ var pageData = {}
                 <?php } ?>
             </select>
         </div>
-        <button class="btn btn-primary">更新信息</button>
         <?php } ?>
+        <button class="btn btn-primary">更新信息</button>
     </form>
 </div>
 
 <?php require "../public/control/footer.php"; ?>
-<?=setJS( "update.js").setJS( "dp.js").setJS( "locales/zh-CN.js")?>
+<?=setJS( "control.js").setJS( "update.js").setJS( "dp.js").setJS( "locales/zh-CN.js")?>
 <script>
 $('.dp').datetimepicker({
     format: 'yyyy-mm-dd',

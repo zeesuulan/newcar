@@ -21,8 +21,14 @@
 				"password" => md5($_POST['password'])
 			]
 		])){
+			$store_id = $D->select("car_store", "id", [
+				"AND" => [
+					"name" => $_POST['username'],
+					"password" => md5($_POST['password'])
+				]
+			]);
 			$_SESSION["username"] = $_POST['username']."门店账号";
-			$_SESSION["store_name"] = $_POST['username'];
+			$_SESSION["store_id"] = $store_id[0];
 			$_SESSION["admin"] = false;
 			returns("", 0);
 		}else{
