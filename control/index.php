@@ -30,6 +30,7 @@ var pageData = {
             </div>
         </div>
     </div>
+    <?php if(isAdmin()){ ?>
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">门店</div>
@@ -41,6 +42,7 @@ var pageData = {
             </div>
         </div>
     </div>
+    <?php } ?>
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">订单</div>

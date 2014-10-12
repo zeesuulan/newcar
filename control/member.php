@@ -15,10 +15,12 @@ var pageData = {
     </div>
 </div>
 <div class="col-md-10">
+    <?php if(isAdmin()) { ?>
     <div class="col-md-12">
         <a href="#" class="btn btn-Warning" data-toggle="modal" data-target="#cModal"><b class="glyphicon glyphicon-plus"></b>添加渠道</a>
         <a href="#" class="btn btn-Warning" data-toggle="modal" data-target="#msModal"><b class="glyphicon glyphicon-plus"></b>添加会员类型</a>
     </div>
+    <?php } ?>
     <div class="col-md-3">
         <table class="table table-striped table-hover " style="margin-top:20px">
             <thead>
@@ -29,7 +31,11 @@ var pageData = {
             <tbody>
                 <?php foreach($origin as $o) { ?>
                 <tr>
-                    <td><?=$o['name']?><a href="#" oid="<?=$o['id']?>" class="glyphicon glyphicon-remove delIcon o_del" title="删除渠道"></a></td>
+                    <td><?=$o['name']?>
+                    <?php if(isAdmin()) { ?>
+                        <a href="#" oid="<?=$o['id']?>" class="glyphicon glyphicon-remove delIcon o_del" title="删除渠道"></a>
+                    <?php } ?>
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -44,7 +50,11 @@ var pageData = {
             <tbody>
                 <?php foreach($sort as $s) { ?>
                 <tr>
-                    <td><?=$s['sort_txt']?><a href="#" msid="<?=$s['id']?>" class="glyphicon glyphicon-remove delIcon msort_del" title="删除类型"></a></td>
+                    <td><?=$s['sort_txt']?>
+                    <?php if(isAdmin()) { ?>
+                        <a href="#" msid="<?=$s['id']?>" class="glyphicon glyphicon-remove delIcon msort_del" title="删除类型"></a>
+                    <?php } ?>
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>

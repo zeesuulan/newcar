@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2014-10-04 09:15:01
+-- Generation Time: 2014-10-12 06:45:20
 -- 服务器版本： 5.6.16
 -- PHP Version: 5.5.11
 
@@ -77,8 +77,8 @@ CREATE TABLE IF NOT EXISTS `car_booking` (
 --
 
 INSERT INTO `car_booking` (`id`, `member_id`, `store_id`, `service_s_id`, `service_sub_id`, `time_id`, `employee_id`, `book_date`, `evaluation`, `status`, `done`, `summary`) VALUES
-(2, 60, 22, 4, 8, 0, 41, '2014-10-12', NULL, 0, 0, ''),
-(3, 16, 22, 1, 9, 0, 28, '2014-11-12', NULL, 0, 1, ''),
+(2, 60, 23, 4, 8, 0, 41, '2014-10-12', NULL, 0, 0, ''),
+(3, 16, 24, 1, 9, 0, 41, '2014-11-12', NULL, 0, 1, ''),
 (4, 16, 22, 1, 9, 0, 24, '2014-9-12', NULL, 1, 1, '');
 
 -- --------------------------------------------------------
@@ -124,14 +124,14 @@ CREATE TABLE IF NOT EXISTS `car_dl` (
   `frameNumber` varchar(30) NOT NULL,
   `liesenceFileNumber` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='驾驶证信息' AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='驾驶证信息' AUTO_INCREMENT=40 ;
 
 --
 -- 转存表中的数据 `car_dl`
 --
 
 INSERT INTO `car_dl` (`id`, `name`, `id_num`, `liesence`, `valid_date_start`, `valid_date_end`, `dl_level`, `gender`, `birthday`, `address`, `nationality`, `firsttime`, `engineNumber`, `frameNumber`, `liesenceFileNumber`) VALUES
-(5, '11111dsasd2s', 2147483647, '湘Axxxxx', '2014-07-19', '2014-07-21', 5, 1, '2014-07-11', '2014-07-30eqwdwqdqwd', '中国', '2014-08-23', '', '', ''),
+(5, '11111dsasd2s', 2147483647, '湘Axxxxx', '2014-07-19', '2014-07-21', 5, 1, '2014-07-11', '2014-07-30eqwdwqdqwd', '中国', '2014-08-23', '', '', '22222'),
 (6, '11111', 11111, '', '2014-07-30', '2014-07-30', 1, 1, '2014-07-30', '2014-07-30', '中国', '2014-07-30', '', '', ''),
 (7, '11111ddddd', 11111, '', '2014-07-03', '2014-07-30', 9, 0, '2014-07-12', '2014-07-30', '中国', '2014-07-10', '', '', ''),
 (8, '11111', 11111, '', '2014-07-30', '2014-07-30', 1, 1, '2014-07-30', '2014-07-30', '中国', '2014-07-30', '', '', ''),
@@ -149,7 +149,8 @@ INSERT INTO `car_dl` (`id`, `name`, `id_num`, `liesence`, `valid_date_start`, `v
 (23, '0.9319126142654568', 1, '321', '2014-09-09', '2014-09-09', 1, 1, '2014-09-09', '123', '2', '2014-09-09', '23', '23', '213'),
 (24, '0.6002025473862886', 0, '321', '2014-09-09', '2014-09-09', 1, 1, '2014-09-09', '123', '2', '2014-09-09', '23', '23', '213'),
 (37, '777', 777, '777', '2014-10-24', '', 1, 1, '1899-12-22', '777', '中国', '2014-10-23', '777', '777', '777'),
-(38, '88888', 88888, '88888', '1899-12-07', '2014-10-23', 14, 1, '0000-00-00', '88888打豆豆', '中国', '2014-10-15', '88888', '88888', '88888');
+(38, '88888', 88888, '88888', '1899-12-07', '2014-10-23', 14, 1, '0000-00-00', '88888打豆豆', '中国', '2014-10-15', '88888', '88888', '88888'),
+(39, '1212', 121212, '1212', '2014-10-04', '2014-10-07', 11, 1, '2014-10-18', '121212', '中国', '2014-10-17', '1212', '1212', '1212');
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ INSERT INTO `car_employee` (`id`, `ename`, `store_id`, `phone`, `time`, `id_num`
 (38, 'dddddd0.21570258354768157', 22, 2147483647, '2014-10-04 08:53:04', 123123123, 3213123, '123213', '123123', '123123', 1, '', '2333', '11222', '4444', 4444, 0, 'statusTxt'),
 (39, 'dasdasd', 22, 123123, '2014-10-04 08:53:40', 123123, 123123, '123123', '123123', '123123', 0, '123123', '123123123123', '123123', '123123', 123123, 0, '123123123123123123123123'),
 (40, 'dddddd0.4319954407401383', 22, 2147483647, '2014-10-04 08:54:29', 123123123, 3213123, '123213', '123123', '123123', 1, 'asdasd', '2333', '11222', '4444', 4444, 0, 'statusTxt'),
-(41, '哈哈哈啊哈哈', 22, 2147483647, '2014-10-04 08:55:12', 123123123, 3213123, '1899-03-22', '123123', '123123', 1, '', '2333wwwww', '11222eeee', '4444', 4444, 0, ''),
+(41, '哈哈哈啊哈哈', 24, 2147483647, '2014-10-04 08:55:12', 123123123, 3213123, '1899-03-22', '123123', '123123', 1, '', '2333wwwww', '11222eeee', '4444', 4444, 0, ''),
 (42, 'dddddd0.1128636326175183', 22, 2147483647, '2014-10-04 08:55:36', 123123123, 3213123, '123213', '123123', '123123', 1, '', '2333', '11222', '4444', 4444, 0, 'statusTxt'),
 (43, 'dddddd0.34397297934629023', 22, 2147483647, '2014-10-04 08:55:39', 123123123, 3213123, '123213', '123123', '123123', 1, '', '2333', '11222', '4444', 4444, 0, 'statusTxt');
 
@@ -254,6 +255,7 @@ CREATE TABLE IF NOT EXISTS `car_member` (
   `memberValid` varchar(30) NOT NULL,
   `memberSort` int(30) NOT NULL,
   `employee_id` int(30) DEFAULT NULL,
+  `store_id` int(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `dl_id` (`dl_id`),
@@ -261,23 +263,25 @@ CREATE TABLE IF NOT EXISTS `car_member` (
   KEY `origin_id_2` (`origin_id`),
   KEY `employee_id` (`employee_id`),
   KEY `memberSort` (`memberSort`),
-  KEY `employee_id_2` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='会员管理' AUTO_INCREMENT=61 ;
+  KEY `employee_id_2` (`employee_id`),
+  KEY `store_id` (`store_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='会员管理' AUTO_INCREMENT=62 ;
 
 --
 -- 转存表中的数据 `car_member`
 --
 
-INSERT INTO `car_member` (`id`, `member_num`, `password`, `dl_id`, `origin_id`, `status`, `phoneNumber`, `brand`, `insurer`, `insurancePeriod`, `memberValid`, `memberSort`, `employee_id`) VALUES
-(2, '21312232132', 'd41d8cd98f00b20', 7, 1, 1, 0, '', '', '', '', 2, 24),
-(10, '32132321323asdsad', '33312', 5, 4, 1, 0, '', '', '', '', 2, 24),
-(11, '32133213123', '123123123', 6, 1, 1, 0, '', '', '', '', 2, 24),
-(12, '2014-12-31', '3052dd6ae88b46a', 10, 1, 1, 0, '', '', '', '', 2, 24),
-(15, '123123123123', '4297f44b1395523', 13, 7, 1, 0, '', '', '', '', 2, 24),
-(16, '123123123', '4297f44b13955235245b2497399d7a93', 14, 8, 1, 0, '', '', '', '', 2, 24),
-(56, '66666', '66666', 11, 2, 1, 66666, '66666', '66666', '66666', '66666', 2, 24),
-(59, '777', 'f1c1592588411002af340cbaedd6fc33', 37, 1, 1, 777, '777', '777', '2014-10-13', '2014-10-08', 2, 24),
-(60, '88888', '1c395a8dce135849bd73c6dba3b54809', 38, 1, 1, 88888, '88888', '88888', '2014-10-14', '1899-12-23', 2, 0);
+INSERT INTO `car_member` (`id`, `member_num`, `password`, `dl_id`, `origin_id`, `status`, `phoneNumber`, `brand`, `insurer`, `insurancePeriod`, `memberValid`, `memberSort`, `employee_id`, `store_id`) VALUES
+(2, '21312232132', 'd41d8cd98f00b20', 7, 1, 1, 0, '', '', '', '', 2, 24, 22),
+(10, '32132321323asdsad', '33312', 5, 4, 1, 0, '', '', '', '', 2, 24, 22),
+(11, '32133213123', '123123123', 6, 1, 1, 0, '', '', '', '', 2, 24, 22),
+(12, '2014-12-31', '3052dd6ae88b46a', 10, 1, 1, 0, '', '', '', '', 2, 24, 24),
+(15, '123123123123', '4297f44b1395523', 13, 7, 1, 0, '', '', '', '', 2, 24, 22),
+(16, '123123123', '4297f44b13955235245b2497399d7a93', 14, 8, 1, 0, '', '', '', '', 2, 24, 22),
+(56, '66666', '66666', 11, 2, 1, 66666, '66666', '66666', '66666', '66666', 2, 24, 22),
+(59, '777', 'f1c1592588411002af340cbaedd6fc33', 37, 1, 1, 777, '777', '777', '2014-10-13', '2014-10-08', 2, 24, 22),
+(60, '88888', '1c395a8dce135849bd73c6dba3b54809', 38, 1, 1, 88888, '88888', '88888', '2014-10-14', '1899-12-23', 2, 0, 22),
+(61, '121121212', 'a01610228fe998f515a72dd730294d87', 39, 7, 1, 1212, '1212', '1212', '2014-10-14', '2014-10-09', 2, 0, 23);
 
 -- --------------------------------------------------------
 
@@ -378,18 +382,21 @@ CREATE TABLE IF NOT EXISTS `car_store` (
   `id` int(255) NOT NULL AUTO_INCREMENT COMMENT '门店ID',
   `address` text NOT NULL COMMENT '门店地址',
   `name` varchar(255) NOT NULL COMMENT '门店名称',
+  `password` varchar(34) NOT NULL,
   `manager` int(244) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `manager` (`manager`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- 转存表中的数据 `car_store`
 --
 
-INSERT INTO `car_store` (`id`, `address`, `name`, `manager`) VALUES
-(22, '阿四大四大阿斯达', '阿四大四大', 24),
-(23, '6654656', '阿四大四大打豆豆', 24);
+INSERT INTO `car_store` (`id`, `address`, `name`, `password`, `manager`) VALUES
+(22, '阿四大四大阿斯达', '阿四大四大', '202cb962ac59075b964b07152d234b70', 24),
+(23, '6654656', '阿四大四大打豆豆', '202cb962ac59075b964b07152d234b70', 24),
+(24, '123', '123', '202cb962ac59075b964b07152d234b70', 37),
+(25, '222', '333333', 'bcbe3365e6ac95ea2c0343a2395834dd', 28);
 
 -- --------------------------------------------------------
 
@@ -461,8 +468,9 @@ ALTER TABLE `car_booking`
 -- 限制表 `car_member`
 --
 ALTER TABLE `car_member`
-  ADD CONSTRAINT `驾照` FOREIGN KEY (`dl_id`) REFERENCES `car_dl` (`id`),
+  ADD CONSTRAINT `car_member_ibfk_1` FOREIGN KEY (`store_id`) REFERENCES `car_store` (`id`),
   ADD CONSTRAINT `用户类型` FOREIGN KEY (`memberSort`) REFERENCES `car_member_sort` (`id`),
+  ADD CONSTRAINT `驾照` FOREIGN KEY (`dl_id`) REFERENCES `car_dl` (`id`),
   ADD CONSTRAINT `渠道ID` FOREIGN KEY (`origin_id`) REFERENCES `car_member_origin` (`id`);
 
 --
